@@ -1,6 +1,5 @@
 .navbar {
   width: 100%;
-  /* height: 110px; */
   background-color: #0050d5;
   display: flex;
   justify-content: space-between;
@@ -40,27 +39,26 @@
 }
 
 .cart__link {
-  background: #333;
+  background: none;
   padding: 10px;
   border-radius: 8px;
 }
 
-.cart__link:hover {
-  background: #dd219e;
-  color: #f4f4f4;
+.sign__link {
+  background: #16c5ff;
+  padding: 8px 8px 8px 1px;
+  border-radius: 8px;
 }
 
-.cartlogo__badge {
-  width: 30px;
-  height: 30px;
-  background-color: #f4f4f4;
-  border-radius: 50%;
-  margin-left: 8px;
-  color: #171717;
+.sign__links > li > a > span {
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  margin-left: 2px;
+}
+
+.cart__link:hover {
+  background: #16c5ff;
+  color: #f4f4f4;
 }
 
 .hamburger__menu {

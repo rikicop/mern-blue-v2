@@ -11,14 +11,35 @@ const Navbar = ({ click }) => {
       <ul className="navbar__links">
         <li>
           <Link to="/cart" className="cart__link">
-            <i className="fas fa-shopping-cart"></i>
-            <span>
-              Cart <span className="cartlogo__badge">0</span>
-            </span>
+            {/* Icon */}
+            {/* <i className="fas fa-shopping-cart"></i> */}
+            <span>Principal</span>
           </Link>
         </li>
         <li>
-          <Link to="/">Shop</Link>
+          <Link to="/" className="cart__link">
+            <span>Servicios</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/" className="cart__link">
+            <span>Blog</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/" className="cart__link">
+            <span>Equipo</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/" className="cart__link">
+            <span>Contacto</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/" className="sign__link">
+            <span>Sign in</span>
+          </Link>
         </li>
       </ul>
 

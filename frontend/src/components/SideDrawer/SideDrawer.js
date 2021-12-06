@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SideDContainer, SideDLinks, SideDCBadge } from "./SideDElements";
+import { SideDContainer, SideDLinks, SignDiv } from "./SideDElements";
 
 const SideDrawer = ({ show, click }) => {
   return (
@@ -7,14 +7,25 @@ const SideDrawer = ({ show, click }) => {
       <SideDLinks onClick={click}>
         <li>
           <Link to="/cart">
-            <i className="fas fa-shopping-cart"></i>
-            <span>
-              Cart <SideDCBadge>0</SideDCBadge>
-            </span>
+            <span>Principal</span>
           </Link>
         </li>
         <li>
-          <Link to="/">Shop</Link>
+          <Link to="/">Servicios</Link>
+        </li>
+        <li>
+          <Link to="/">Blog</Link>
+        </li>
+        <li>
+          <Link to="/">Equipo</Link>
+        </li>
+        <li>
+          <Link to="/">Contacto</Link>
+        </li>
+        <li>
+          <Link to="/">
+            <SignDiv>Sign in</SignDiv>
+          </Link>
         </li>
       </SideDLinks>
     </SideDContainer>

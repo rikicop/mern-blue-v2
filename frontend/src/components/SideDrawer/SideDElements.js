@@ -1,4 +1,6 @@
 import styled from "styled-components/macro";
+/* import { Link as LinkR } from "react-router-dom"; */
+/* import { Link as LinkS } from "react-scroll"; */
 
 export const SideDContainer = styled.div`
   width: 70%;
@@ -13,7 +15,7 @@ export const SideDContainer = styled.div`
   /* Esto es para que queden en el medio (Y) */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 
   @media (min-width: 960px) {
     display: none;
@@ -22,16 +24,19 @@ export const SideDContainer = styled.div`
 
 export const SideDLinks = styled.ul`
   display: flex;
+  margin-top: 55px;
   flex-direction: column;
   list-style: none;
+
   & > li {
     display: flex;
     align-items: center;
   }
 
   & > li > a:hover {
-    background: #333;
-    color: #c4c4c4;
+    color: #0050d5;
+    margin-left: 20px;
+    transition: all 0.5s ease-out;
   }
 
   & > li > a {
@@ -42,15 +47,20 @@ export const SideDLinks = styled.ul`
     flex: 1;
     padding: 1rem;
     text-decoration: none;
-    color: #171717;
+    color: #202020;
     font-size: 1.6rem;
   }
 
   & > li > a > span {
     display: flex;
     align-items: center;
-    margin-left: 8px;
   }
+`;
+
+export const SignDiv = styled.div`
+  background: #16c5ff;
+  padding: 12px 15px;
+  border-radius: 20px;
 `;
 
 export const SideDCBadge = styled.span`
