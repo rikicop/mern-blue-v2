@@ -5,10 +5,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ProductScreen } from "./screens/ProductScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { CartScreen } from "./screens/CartScreen";
+import { SigninScreen } from "./screens/SigninScreen";
 // Components
 import Navbar from "./components/Navbar/Navbar";
 import Backdrop from "./components/Backdrop";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
+
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route exact path="/" element={<HomeScreen />} />
           <Route exact path="/product/:id" element={<ProductScreen />} />
           <Route exact path="/cart" element={<CartScreen />} />
+          <Route exact path="/signin" element={<SigninScreen />} />
         </Routes>
       </main>
     </Router>

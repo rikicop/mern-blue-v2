@@ -23,7 +23,7 @@ const SideDrawer = ({ show, click }) => {
           <Link to="/">Contacto</Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/signin">
             <SignDiv>Sign in</SignDiv>
           </Link>
         </li>

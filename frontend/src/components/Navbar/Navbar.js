@@ -37,7 +37,7 @@ const Navbar = ({ click }) => {
           </Link>
         </li>
         <li>
-          <Link to="/" className="sign__link">
+          <Link to="/signin" className="sign__link">
             <span>Sign in</span>
           </Link>
         </li>
