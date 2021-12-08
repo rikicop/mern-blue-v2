@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
@@ -10,8 +10,7 @@ export const Container = styled.div`
   top: 0;
   z-index: 0;
   overflow: hidden;
-  background:  linear-gradient(108deg, #fff 0%, #8de1fd 100%);
-  );
+  background: linear-gradient(108deg, #fff 0%, #8de1fd 100%);
 `;
 
 export const FormWrap = styled.div`

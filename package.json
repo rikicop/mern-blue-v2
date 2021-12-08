@@ -4,11 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/seederScript.js"
+    "start": "nodemon backend/server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,10 +12,7 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mongoose": "^6.0.14"
-  },
-  "devDependencies": {
-    "concurrently": "^6.4.0",
+    "mongoose": "^6.0.14",
     "nodemon": "^2.0.15"
   }
 }
