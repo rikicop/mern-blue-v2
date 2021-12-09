@@ -1,9 +1,10 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { NavbarElement } from "./NavbarElements";
 
 const Navbar = ({ click }) => {
   return (
-    <nav className="navbar">
+    <NavbarElement>
       <div className="navbar__logo">
         <h2>TECNEMAS</h2>
       </div>
@@ -48,7 +49,7 @@ const Navbar = ({ click }) => {
         <div></div>
         <div></div>
       </div>
-    </nav>
+    </NavbarElement>
   );
 };
 
