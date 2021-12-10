@@ -10,6 +10,10 @@ export const SideDContainer = styled.div`
   top: 0;
   left: 0;
   z-index: 200;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /*  overflow: hidden;
+  position: absolute; */
   transform: ${({ show }) => (show ? "translateX(0)" : "translateX(-100%)")};
   transition: all 0.3s ease-out;
   /* Esto es para que queden en el medio (Y) */
@@ -50,10 +54,10 @@ export const SideLi = styled.li`
     font-size: 1.6rem;
   }
 
-  & > a > span {
+  /*   & > a > span {
     display: flex;
     align-items: center;
-  }
+  } */
 `;
 
 export const SignDiv = styled.div`

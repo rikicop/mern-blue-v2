@@ -6,9 +6,7 @@ const SideDrawer = ({ show, click }) => {
     <SideDContainer show={show}>
       <SideDUl onClick={click}>
         <SideLi>
-          <Link to="/cart">
-            <span>Principal</span>
-          </Link>
+          <Link to="/cart">Principal</Link>
         </SideLi>
         <SideLi>
           <Link to="/">Servicios</Link>
