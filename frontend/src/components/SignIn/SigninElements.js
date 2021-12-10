@@ -20,7 +20,7 @@ export const FormWrap = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 400px) {
-    height: 80%;
+    height: 67%;
   }
 `;
 
@@ -45,6 +45,7 @@ export const FormContent = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 480px) {
+    margin-top: 200px;
     padding: 10px;
   }
 `;
@@ -56,11 +57,11 @@ export const Form = styled.form`
   z-index: 1;
   display: grid;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 60px 32px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 
-  @media screen and (max-widht: 400px) {
+  @media screen and (max-width: 400px) {
     padding: 32px 32px;
   }
 `;
@@ -102,6 +103,6 @@ export const Text = styled.span`
   font-size: 14px;
   margin-bottom: 0px;
   @media (max-width: 400px) {
-    margin-bottom: -50px;
+    margin-bottom: -20px;
   }
 `;

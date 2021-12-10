@@ -3,7 +3,6 @@ import React from "react";
 import {
   Container,
   FormWrap,
-  Icon,
   FormContent,
   Form,
   FormH1,
@@ -18,7 +17,6 @@ function SignIn() {
     <>
       <Container>
         <FormWrap>
-          <Icon to="/">Tecnemas</Icon>
           <FormContent>
             <Form action="#">
               <FormH1> Sign in to your code </FormH1>

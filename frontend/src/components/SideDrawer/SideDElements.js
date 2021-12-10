@@ -22,24 +22,23 @@ export const SideDContainer = styled.div`
   }
 `;
 
-export const SideDLinks = styled.ul`
+export const SideDUl = styled.ul`
   display: flex;
   margin-top: 55px;
   flex-direction: column;
   list-style: none;
+`;
 
-  & > li {
-    display: flex;
-    align-items: center;
-  }
-
-  & > li > a:hover {
+export const SideLi = styled.li`
+  display: flex;
+  align-items: center;
+  & > a:hover {
     color: #0050d5;
     margin-left: 20px;
     transition: all 0.5s ease-out;
   }
 
-  & > li > a {
+  & > a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +50,7 @@ export const SideDLinks = styled.ul`
     font-size: 1.6rem;
   }
 
-  & > li > a > span {
+  & > a > span {
     display: flex;
     align-items: center;
   }

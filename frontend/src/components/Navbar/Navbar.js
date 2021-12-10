@@ -1,54 +1,58 @@
-import "./Navbar.css";
-import { Link } from "react-router-dom";
-import { NavbarElement } from "./NavbarElements";
+import {
+  NavbarElement,
+  NavCartLink,
+  NavLi,
+  NavLogo,
+  NavUl,
+  NavSpanLink,
+  NavSignLink,
+  NavSignLinkSpan,
+  HamburgerMenu,
+  HamburgerLines,
+} from "./NavbarElements";
 
 const Navbar = ({ click }) => {
   return (
     <NavbarElement>
-      <div className="navbar__logo">
-        <h2>TECNEMAS</h2>
-      </div>
+      <NavLogo to="/">TECNEMAS</NavLogo>
+      <NavUl>
+        <NavLi>
+          <NavCartLink to="/cart">
+            <NavSpanLink>Principal</NavSpanLink>
+          </NavCartLink>
+        </NavLi>
+        <NavLi>
+          <NavCartLink to="/">
+            <NavSpanLink>Servicios</NavSpanLink>
+          </NavCartLink>
+        </NavLi>
+        <NavLi>
+          <NavCartLink to="/">
+            <NavSpanLink>Blog</NavSpanLink>
+          </NavCartLink>
+        </NavLi>
+        <NavLi>
+          <NavCartLink to="/">
+            <NavSpanLink>Equipo</NavSpanLink>
+          </NavCartLink>
+        </NavLi>
+        <NavLi>
+          <NavCartLink to="/">
+            <NavSpanLink>Contacto</NavSpanLink>
+          </NavCartLink>
+        </NavLi>
+        <NavLi>
+          <NavSignLink to="/signin">
+            <NavSignLinkSpan>Sign in</NavSignLinkSpan>
+          </NavSignLink>
+        </NavLi>
+      </NavUl>
 
-      <ul className="navbar__links">
-        <li>
-          <Link to="/cart" className="cart__link">
-            {/* Icon */}
-            {/* <i className="fas fa-shopping-cart"></i> */}
-            <span>Principal</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/" className="cart__link">
-            <span>Servicios</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/" className="cart__link">
-            <span>Blog</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/" className="cart__link">
-            <span>Equipo</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/" className="cart__link">
-            <span>Contacto</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/signin" className="sign__link">
-            <span>Sign in</span>
-          </Link>
-        </li>
-      </ul>
-
-      <div className="hamburger__menu" onClick={click}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <HamburgerMenu onClick={click}>
+        <HamburgerLines></HamburgerLines>
+        <HamburgerLines></HamburgerLines>
+        <HamburgerLines></HamburgerLines>
+      </HamburgerMenu>
     </NavbarElement>
   );
 };

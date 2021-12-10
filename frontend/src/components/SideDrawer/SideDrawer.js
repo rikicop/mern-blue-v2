@@ -1,33 +1,33 @@
 import { Link } from "react-router-dom";
-import { SideDContainer, SideDLinks, SignDiv } from "./SideDElements";
+import { SideDContainer, SideDUl, SignDiv, SideLi } from "./SideDElements";
 
 const SideDrawer = ({ show, click }) => {
   return (
     <SideDContainer show={show}>
-      <SideDLinks onClick={click}>
-        <li>
+      <SideDUl onClick={click}>
+        <SideLi>
           <Link to="/cart">
             <span>Principal</span>
           </Link>
-        </li>
-        <li>
+        </SideLi>
+        <SideLi>
           <Link to="/">Servicios</Link>
-        </li>
-        <li>
+        </SideLi>
+        <SideLi>
           <Link to="/">Blog</Link>
-        </li>
-        <li>
+        </SideLi>
+        <SideLi>
           <Link to="/">Equipo</Link>
-        </li>
-        <li>
+        </SideLi>
+        <SideLi>
           <Link to="/">Contacto</Link>
-        </li>
-        <li>
+        </SideLi>
+        <SideLi>
           <Link to="/signin">
             <SignDiv>Sign in</SignDiv>
           </Link>
-        </li>
-      </SideDLinks>
+        </SideLi>
+      </SideDUl>
     </SideDContainer>
   );
 };

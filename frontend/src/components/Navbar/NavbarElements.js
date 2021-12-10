@@ -3,16 +3,36 @@ import { Link } from "react-router-dom";
 
 export const NavbarElement = styled.nav`
   width: 100%;
+  height: 80px;
   background-color: #0050d5;
   display: flex;
+  position: sticky;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 1rem;
   z-index: 50;
+
+  @media (max-width: 960) {
+    transition: 0.8s all ease;
+  }
 `;
-/* Usa el h2 directamente mientras tanto... */
-export const NavLogo = styled.div`
+
+/*
+## En caso de crear un auto scroll ## 
+export const NavLogo = styled(LinkS)`
   color: #f4f4f4;
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+  text-decoration: node;
+  @media (max-width: 500px) {
+    font-size: 1rem;
+  } */
+
+export const NavLogo = styled(Link)`
+  color: #f4f4f4;
+  text-decoration: none;
+  font-weight: bold;
   font-size: 1.4rem;
   cursor: pointer;
   @media (max-width: 500px) {
@@ -21,21 +41,58 @@ export const NavLogo = styled.div`
 `;
 
 export const NavUl = styled.ul`
+  height: 80px;
   display: flex;
   list-style: none;
   align-items: center;
 `;
 
 export const NavLi = styled.li`
+  height: 40px;
   padding-left: 1.5rem;
+  /*
+  Iría mejor en el span de abajo  
+  &.active {
+    border-bottom: 3px solid #16c5ff;
+  } */
 
   @media (max-width: 960px) {
     display: none;
   }
 `;
 
-export const NavLink = styled(Link)`
-  /* .navbar__links > li > a { */
+export const NavSpanLink = styled.span`
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+`;
+
+export const NavCartLink = styled(Link)`
+  background: none;
+  padding: 10px;
+  border-radius: 50px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #f4f4f4;
+  font-size: 1.2rem;
+  outline: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #16c5ff;
+    color: #f4f4f4;
+  }
+`;
+
+export const NavSignLink = styled(Link)`
+  background: #16c5ff;
+  padding: 8px 8px 8px 1px;
+  border-radius: 8px;
+  border-radius: 8px;
   text-decoration: none;
   color: #f4f4f4;
   font-size: 1.2rem;
@@ -43,46 +100,19 @@ export const NavLink = styled(Link)`
   align-items: center;
 `;
 
-export const NavSpanLink = styled.span`
-  /* .navbar__links > li > a > span { */
+export const NavSignLinkSpan = styled.span`
   display: flex;
   align-items: center;
-  margin-left: 8px;
+  margin-left: 7px;
 `;
 
-export const NavCartLink = styled(Link)`
-  /* .cart__link { */
-  background: none;
-  padding: 10px;
-  border-radius: 8px;
-
-  &:hover {
-    background: #16c5ff;
-    color: #f4f4f4;
-  }
+export const HamburgerLines = styled.div`
+  width: 100%;
+  height: 3px;
+  background: #f4f4f4;
 `;
-
-export const SignLink = styled(Link)`
-  /* .sign__link { */
-  background: #16c5ff;
-  padding: 8px 8px 8px 1px;
-  border-radius: 8px;
-`;
-
-export const SignLinkSpan = styled.span`
-  /* .sign__links > li > a > span { */
-  display: flex;
-  align-items: center;
-  margin-left: 2px;
-`;
-
-/* .cart__link:hover {
-  background: #16c5ff;
-  color: #f4f4f4;
-} */
 
 export const HamburgerMenu = styled.div`
-  /* .hamburger__menu { */
   display: none;
   width: 30px;
   height: 30px;
@@ -90,48 +120,12 @@ export const HamburgerMenu = styled.div`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+
+  &:hover > ${HamburgerLines} {
+    background: rgb(0, 0, 0);
+  }
+
   @media (max-width: 960px) {
     display: flex;
   }
 `;
-
-export const HamburgerLines = styled.div`
-  width: 100%;
-  height: 3px;
-  background: #f4f4f4;
-  &:hover {
-    background: rgb(0, 0, 0);
-  }
-`;
-
-/*
-.hamburger__menu:hover > div {
-  background: rgb(0, 0, 0);
-}
-
-.hamburger__menu > div {
-  width: 100%;
-  height: 3px;
-  background: #f4f4f4;
-}
-*/
-
-/*
-MEDIA QUERIES
-
-@media (max-width: 960px) {
-  .navbar__links {
-    display: none;
-  }
-
-  .hamburger__menu {
-    display: flex;
-  }
-}
-
-@media (max-width: 500px) {
-  .navbar__logo h2 {
-    font-size: 1rem;
-  }
-}
- */
