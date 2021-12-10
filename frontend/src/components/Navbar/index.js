@@ -4,42 +4,31 @@ import {
   NavLi,
   NavLogo,
   NavUl,
-  NavSpanLink,
   NavSignLink,
   NavSignLinkSpan,
   HamburgerMenu,
   HamburgerLines,
 } from "./NavbarElements";
 
-const Navbar = ({ click }) => {
+const Navbar = ({ click, show }) => {
   return (
     <NavbarElement>
       <NavLogo to="/">TECNEMAS</NavLogo>
       <NavUl>
         <NavLi>
-          <NavCartLink to="/cart">
-            <NavSpanLink>Principal</NavSpanLink>
-          </NavCartLink>
+          <NavCartLink to="/cart">Principal</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/">
-            <NavSpanLink>Servicios</NavSpanLink>
-          </NavCartLink>
+          <NavCartLink to="/">Servicios</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/">
-            <NavSpanLink>Blog</NavSpanLink>
-          </NavCartLink>
+          <NavCartLink to="/">Blog</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/">
-            <NavSpanLink>Equipo</NavSpanLink>
-          </NavCartLink>
+          <NavCartLink to="/">Equipo</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/">
-            <NavSpanLink>Contacto</NavSpanLink>
-          </NavCartLink>
+          <NavCartLink to="/">Contacto</NavCartLink>
         </NavLi>
         <NavLi>
           <NavSignLink to="/signin">
@@ -48,7 +37,7 @@ const Navbar = ({ click }) => {
         </NavLi>
       </NavUl>
 
-      <HamburgerMenu onClick={click}>
+      <HamburgerMenu show={show} onClick={click}>
         <HamburgerLines></HamburgerLines>
         <HamburgerLines></HamburgerLines>
         <HamburgerLines></HamburgerLines>

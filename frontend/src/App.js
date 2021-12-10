@@ -7,15 +7,15 @@ import { HomeScreen } from "./screens/HomeScreen";
 import { CartScreen } from "./screens/CartScreen";
 import { SigninScreen } from "./screens/SigninScreen";
 // Components
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import Backdrop from "./components/Backdrop";
-import SideDrawer from "./components/SideDrawer/SideDrawer";
+import SideDrawer from "./components/SideDrawer";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
   return (
     <Router>
-      <Navbar click={() => setSideToggle(true)} />
+      <Navbar click={() => setSideToggle(true)} show={sideToggle} />
       <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <main>

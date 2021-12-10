@@ -127,5 +127,6 @@ export const HamburgerMenu = styled.div`
 
   @media (max-width: 960px) {
     display: flex;
+    visibility: ${({ show }) => (show ? "hidden" : "visible")};
   }
 `;
