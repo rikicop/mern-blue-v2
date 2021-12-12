@@ -10,7 +10,7 @@ export const ServicesContainer = styled.div`
   background: #010606;
 
   @media screen and (max-width: 768px) {
-    height: 1100px;
+    height: 1300px;
   }
 
   @media screen and (max-width: 480px) {
@@ -52,7 +52,7 @@ export const Overlay = styled.div`
   position: absolute;
   border-radius: 2px;
   width: 100%;
-  height: 40%;
+  height: 50%;
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -84,7 +84,8 @@ export const ServicesCard = styled.div`
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  max-height: 440px;
+  /* max-height: 440px; */
+  height: 330px;
   padding: 18px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
