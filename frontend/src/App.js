@@ -5,6 +5,7 @@ import { ProductScreen } from "./screens/ProductScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { CartScreen } from "./screens/CartScreen";
 import { SigninScreen } from "./screens/SigninScreen";
+import { MyPostsScreen } from "./screens/MyPostsScreen";
 // Components
 import Navbar from "./components/Navbar";
 import Backdrop from "./components/Backdrop";
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/product/:id" element={<ProductScreen />} />
           <Route exact path="/cart" element={<CartScreen />} />
           <Route exact path="/signin" element={<SigninScreen />} />
+          <Route exact path="/myposts" element={<MyPostsScreen />} />
         </Routes>
       </main>
     </Router>
