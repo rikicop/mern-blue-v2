@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 /* import Navbar from "../Navbar/Navbar"; */
 import {
   Container,
@@ -25,7 +26,9 @@ function SignIn() {
               <FormLabel htmlForm="for"> Password </FormLabel>
               <FormInput type="email" required />
               <FormButton type="submit">Continue</FormButton>
-              <Text> Forgot Password </Text>
+              <Text>
+                Nuevo? <Link to="/">Registrate Aquí!</Link>
+              </Text>
             </Form>
           </FormContent>
         </FormWrap>

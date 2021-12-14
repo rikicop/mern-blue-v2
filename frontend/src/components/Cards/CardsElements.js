@@ -76,7 +76,20 @@ export const CardDescription = styled.p`
 `;
 
 export const CardButtons = styled.div`
-  padding: 0;
+  padding: 1rem;
+`;
+
+export const CardCreate = styled.button`
+  padding: 1rem;
+  font-family: inherit;
+  font-weight:bold;
+  font-size:
+  margin:1rem;
+  border:2px solid skyblue;
+  background: transparent;
+  color: skyblue;
+  border-radius:10px;
+  transition: background 200ms ease-in, color 200ms ease-in;
 `;
 
 export const CardEdit = styled.button`
@@ -85,22 +98,32 @@ export const CardEdit = styled.button`
   font-weight:bold;
   font-size:
   margin:1rem;
-  border:2px solid red;
+  border:2px solid blue;
   background: transparent;
-  color: red;
+  color: blue;
   border-radius:10px;
   transition: background 200ms ease-in, color 200ms ease-in;
 `;
 
 export const CardDelete = styled.button`
  padding: 1rem;
-  font-family: inherit;
-  font-weight:bold;
-  font-size:
-  margin:1rem;
-  border:2px solid red;
-  background: transparent;
-  color: red;
-  border-radius:10px;
-  transition: background 200ms ease-in, color 200ms ease-in;
+ font-family: inherit;
+ font-weight:bold;
+ font-size:
+ margin:1rem;
+ border:2px solid red;
+ background: transparent;
+ color: red;
+ border-radius:10px;
+ transition: background 200ms ease-in, color 200ms ease-in;
+`;
+
+export const CardDateCreated = styled.p`
+  padding: 0.2rem;
+  color: white;
+`;
+
+export const CardCategory = styled.p`
+  padding: 0.2rem;
+  color: white;
 `;

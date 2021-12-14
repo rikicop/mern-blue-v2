@@ -1,10 +1,14 @@
 import React from "react";
-import Icon1 from "../../images/svg-2.svg";
+/* import Icon1 from "../../images/svg-2.svg"; */
+import { Link } from "react-router-dom";
 
 import {
   CardBody,
   CardButtons,
+  CardCategory,
   CardContainer,
+  CardCreate,
+  CardDateCreated,
   CardDelete,
   CardDescription,
   CardEdit,
@@ -15,89 +19,40 @@ import {
   CardWrapper,
 } from "./CardsElements";
 
+import publicaciones from "../../data/posts";
+
 const Cards = () => {
+  const deleteHandler = (id) => {
+    if (window.confirm("Esta Seguro??")) {
+    }
+  };
   return (
     <>
       <CardsContainer>
-        <CardsHeader>Mis Puplicaciones</CardsHeader>
+        <CardsHeader>Bienvenido Ricardo</CardsHeader>
+        <Link to="createnpost">
+          <CardCreate> Create New Post </CardCreate>
+        </Link>
         <CardWrapper>
-          <CardContainer>
-            <CardBody>
-              <CardImg src={Icon1} />
-              <CardTitle>Hola</CardTitle>
-              <CardDescription>Soy Facundo</CardDescription>
-            </CardBody>
-            <CardButtons>
-              <CardEdit>Editar</CardEdit>
-              <CardDelete>Borrar</CardDelete>
-            </CardButtons>
-          </CardContainer>
-          <CardContainer>
-            <CardBody>
-              <CardImg src={Icon1} />
-              <CardTitle>Hola</CardTitle>
-              <CardDescription>Soy Facundo</CardDescription>
-            </CardBody>
-            <CardButtons>
-              <CardEdit>Editar</CardEdit>
-              <CardDelete>Borrar</CardDelete>
-            </CardButtons>
-          </CardContainer>
-          <CardContainer>
-            <CardBody>
-              <CardImg src={Icon1} />
-              <CardTitle>Hola</CardTitle>
-              <CardDescription>Soy Facundo</CardDescription>
-            </CardBody>
-            <CardButtons>
-              <CardEdit>Editar</CardEdit>
-              <CardDelete>Borrar</CardDelete>
-            </CardButtons>
-          </CardContainer>
-          <CardContainer>
-            <CardBody>
-              <CardImg src={Icon1} />
-              <CardTitle>Hola</CardTitle>
-              <CardDescription>Soy Facundo</CardDescription>
-            </CardBody>
-            <CardButtons>
-              <CardEdit>Editar</CardEdit>
-              <CardDelete>Borrar</CardDelete>
-            </CardButtons>
-          </CardContainer>
-          <CardContainer>
-            <CardBody>
-              <CardImg src={Icon1} />
-              <CardTitle>Hola</CardTitle>
-              <CardDescription>Soy Facundo</CardDescription>
-            </CardBody>
-            <CardButtons>
-              <CardEdit>Editar</CardEdit>
-              <CardDelete>Borrar</CardDelete>
-            </CardButtons>
-          </CardContainer>
-          <CardContainer>
-            <CardBody>
-              <CardImg src={Icon1} />
-              <CardTitle>Hola</CardTitle>
-              <CardDescription>Soy Facundo</CardDescription>
-            </CardBody>
-            <CardButtons>
-              <CardEdit>Editar</CardEdit>
-              <CardDelete>Borrar</CardDelete>
-            </CardButtons>
-          </CardContainer>
-          <CardContainer>
-            <CardBody>
-              <CardImg src={Icon1} />
-              <CardTitle>Hola</CardTitle>
-              <CardDescription>Soy Facundo</CardDescription>
-            </CardBody>
-            <CardButtons>
-              <CardEdit>Editar</CardEdit>
-              <CardDelete>Borrar</CardDelete>
-            </CardButtons>
-          </CardContainer>
+          {publicaciones.map((pub) => (
+            <CardContainer key={pub._id}>
+              <CardBody>
+                <CardImg src={pub.imagen} />
+                <CardTitle>{pub.title}</CardTitle>
+                <CardDescription>{pub.description}</CardDescription>
+              </CardBody>
+              <CardButtons>
+                <Link to={`/post/${pub._id}`}>
+                  <CardEdit>Editar</CardEdit>
+                </Link>
+                <CardDelete onClick={() => deleteHandler(pub._id)}>
+                  Borrar
+                </CardDelete>
+              </CardButtons>
+              <CardDateCreated>Created - On</CardDateCreated>
+              <CardCategory>{pub.category}</CardCategory>
+            </CardContainer>
+          ))}
         </CardWrapper>
       </CardsContainer>
     </>

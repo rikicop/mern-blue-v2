@@ -16,19 +16,19 @@ const Navbar = ({ click, show }) => {
       <NavLogo to="/">TECNEMAS</NavLogo>
       <NavUl>
         <NavLi>
-          <NavCartLink to="/cart">Principal</NavCartLink>
+          <NavCartLink to="/">Principal</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/">Servicios</NavCartLink>
+          <NavCartLink to="/cart">Servicios</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/">Blog</NavCartLink>
+          <NavCartLink to="/cart">Blog</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/">Equipo</NavCartLink>
+          <NavCartLink to="/cart">Equipo</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/">Contacto</NavCartLink>
+          <NavCartLink to="/myposts">My Posts</NavCartLink>
         </NavLi>
         <NavLi>
           <NavSignLink to="/signin">
