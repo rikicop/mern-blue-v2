@@ -1,29 +1,38 @@
 const notes = [
   {
     _id: "1",
-    title: "Day 1 of college",
-    content:
-      "I made a few new friends and introduced myself to a lot of new teachers.",
-    category: "College",
+    title: "Hola",
+    description: "Hey how are you?",
+    category: "anime",
+    imagen: "https://artfiles.alphacoders.com/871/87125.jpg",
   },
   {
     _id: "2",
-    title: "Learned some Node JS",
-    content: "Learned how to create a server in node JS and my first API",
-    category: "Learning",
+    title: "Hola",
+    description: "Hey how are you?",
+    category: "romantic",
+    imagen: "https://artfiles.alphacoders.com/871/87129.jpg",
   },
   {
     _id: "3",
-    title: "Watched some Anime",
-    content: "Finished 2 seasons of Attack on Titan and My Hero academia.",
-    category: "Entertainment",
+    title: "Hola",
+    description: "Hey how are you?",
+    category: "adventure",
+    imagen: "https://artfiles.alphacoders.com/871/87126.jpg",
   },
   {
     _id: "4",
-    title: "Started React JS",
-    content:
-      "Made my first App in React JS, feels awesome to learn something new. I aim to be a full stack dev someday",
-    category: "Learning",
+    title: "Hola",
+    description: "Hey how are you?",
+    category: "action",
+    imagen: "https://artfiles.alphacoders.com/871/87124.jpg",
+  },
+  {
+    _id: "5",
+    title: "Hola",
+    description: "Hey how are you?",
+    category: "mitology",
+    imagen: "https://artfiles.alphacoders.com/871/87122.jpg",
   },
 ];
 

@@ -1,6 +1,7 @@
-import React from "react";
+import { useEffect, useState } from "react";
 /* import Icon1 from "../../images/svg-2.svg"; */
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import {
   CardBody,
@@ -19,13 +20,25 @@ import {
   CardWrapper,
 } from "./CardsElements";
 
-import publicaciones from "../../data/posts";
-
 const Cards = () => {
+  const [notes, setNotes] = useState([]);
+
   const deleteHandler = (id) => {
     if (window.confirm("Esta Seguro??")) {
     }
   };
+
+  const fetchNotes = async () => {
+    const { data } = await axios.get("/api/notes");
+    setNotes(data);
+  };
+
+  console.log(notes);
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
   return (
     <>
       <CardsContainer>
@@ -34,7 +47,7 @@ const Cards = () => {
           <CardCreate> Create New Post </CardCreate>
         </Link>
         <CardWrapper>
-          {publicaciones.map((pub) => (
+          {notes.map((pub) => (
             <CardContainer key={pub._id}>
               <CardBody>
                 <CardImg src={pub.imagen} />
