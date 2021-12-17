@@ -15,14 +15,16 @@ const SideDrawer = ({ show, click }) => {
           <Link to="/cart">Blog</Link>
         </SideLi>
         <SideLi>
-          <Link to="/cart">Equipo</Link>
-        </SideLi>
-        <SideLi>
           <Link to="/myposts">My Posts</Link>
         </SideLi>
         <SideLi>
           <Link to="/signin">
             <SignDiv>Sign in</SignDiv>
+          </Link>
+        </SideLi>
+        <SideLi>
+          <Link to="/logout" style={{ color: "red" }}>
+            Logout
           </Link>
         </SideLi>
       </SideDUl>

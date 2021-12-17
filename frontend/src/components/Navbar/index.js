@@ -1,3 +1,4 @@
+/* import { useNavigate } from "react-router"; */
 import {
   NavbarElement,
   NavCartLink,
@@ -11,6 +12,7 @@ import {
 } from "./NavbarElements";
 
 const Navbar = ({ click, show }) => {
+  /* const navigate = useNavigate(); */
   return (
     <NavbarElement>
       <NavLogo to="/">TECNEMAS</NavLogo>
@@ -25,15 +27,24 @@ const Navbar = ({ click, show }) => {
           <NavCartLink to="/cart">Blog</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/cart">Equipo</NavCartLink>
-        </NavLi>
-        <NavLi>
           <NavCartLink to="/myposts">My Posts</NavCartLink>
         </NavLi>
         <NavLi>
           <NavSignLink to="/signin">
             <NavSignLinkSpan>Sign in</NavSignLinkSpan>
           </NavSignLink>
+        </NavLi>
+        <NavLi>
+          <NavCartLink
+            to="/"
+            style={{ color: "#ef5350", fontWeight: "bolder" }}
+            onClick={() => {
+              localStorage.removeItem("userInfo");
+              /* navigate("/"); */
+            }}
+          >
+            LogOut
+          </NavCartLink>
         </NavLi>
       </NavUl>
 

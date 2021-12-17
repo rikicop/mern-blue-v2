@@ -6,6 +6,7 @@ import { HomeScreen } from "./screens/HomeScreen";
 import { CartScreen } from "./screens/CartScreen";
 import { SigninScreen } from "./screens/SigninScreen";
 import { MyPostsScreen } from "./screens/MyPostsScreen";
+import { RegisterScreen } from "./screens/RegisterScreen";
 // Components
 import Navbar from "./components/Navbar";
 import Backdrop from "./components/Backdrop";
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/product/:id" element={<ProductScreen />} />
           <Route exact path="/cart" element={<CartScreen />} />
           <Route exact path="/signin" element={<SigninScreen />} />
+          <Route exact path="/register" element={<RegisterScreen />} />
           <Route exact path="/myposts" element={<MyPostsScreen />} />
         </Routes>
       </main>
