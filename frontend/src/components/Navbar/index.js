@@ -1,4 +1,7 @@
 /* import { useNavigate } from "react-router"; */
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../actions/userActions";
 import {
   NavbarElement,
   NavCartLink,
@@ -13,6 +16,13 @@ import {
 
 const Navbar = ({ click, show }) => {
   /* const navigate = useNavigate(); */
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+  useEffect(() => {}, [userInfo]);
   return (
     <NavbarElement>
       <NavLogo to="/">TECNEMAS</NavLogo>
@@ -38,10 +48,7 @@ const Navbar = ({ click, show }) => {
           <NavCartLink
             to="/"
             style={{ color: "#ef5350", fontWeight: "bolder" }}
-            onClick={() => {
-              localStorage.removeItem("userInfo");
-              /* navigate("/"); */
-            }}
+            onClick={logoutHandler}
           >
             LogOut
           </NavCartLink>

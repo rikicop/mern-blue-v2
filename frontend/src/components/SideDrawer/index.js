@@ -1,7 +1,17 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../../actions/userActions";
 import { SideDContainer, SideDUl, SignDiv, SideLi } from "./SideDElements";
 
 const SideDrawer = ({ show, click }) => {
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+  useEffect(() => {}, [userInfo]);
   return (
     <SideDContainer show={show}>
       <SideDUl onClick={click}>
@@ -23,7 +33,7 @@ const SideDrawer = ({ show, click }) => {
           </Link>
         </SideLi>
         <SideLi>
-          <Link to="/logout" style={{ color: "red" }}>
+          <Link to="/" style={{ color: "red" }} onClick={logoutHandler}>
             Logout
           </Link>
         </SideLi>

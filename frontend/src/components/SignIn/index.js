@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
 /* import Navbar from "../Navbar/Navbar"; */
 /* import Loading from "../Loading";
 import ErrorMessage from "../ErrorMessage" */
-import axios from "axios";
-/* import { useNavigate } from "react-router-dom"; */
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   FormWrap,
@@ -16,13 +13,16 @@ import {
   FormButton,
   Text,
 } from "./SigninElements";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../actions/userActions";
+
 function SigninScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  /*  const navigate = useNavigate(); */
+  const navigate = useNavigate();
   /*   useEffect(() => {
     const userInfo = localStorage.getItem("userInfo");
     if (userInfo) {
@@ -30,36 +30,20 @@ function SigninScreen() {
     }
   }, [navigate]); */
 
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/myposts");
+    }
+  }, [navigate, userInfo]);
+
   const submitHandler = async (e) => {
     e.preventDefault();
-    try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-      setLoading(true);
-      const { data } = await axios.post(
-        "/api/users/login",
-        {
-          email,
-          password,
-        },
-        config
-      );
-      console.log(data);
-      /* Quiero que mi email y pass 
-         se guarden en localstorage
-         (no puede recibir objetos 
-          por eso el stringify) 
-      */
-      localStorage.setItem("userInfo", JSON.stringify(data));
-      setError(false);
-      setLoading(false);
-    } catch (error) {
-      setError(error.response.data.message);
-      setLoading(false);
-    }
+    dispatch(login(email, password));
   };
   return (
     <>
