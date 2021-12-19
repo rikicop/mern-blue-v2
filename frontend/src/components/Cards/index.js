@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { listPosts } from "../../actions/postsActions";
+import { useNavigate } from "react-router";
 
 import {
   CardBody,
@@ -26,6 +27,9 @@ const Cards = () => {
   const postList = useSelector((state) => state.postList);
   const { loading, posts, error } = postList;
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   const deleteHandler = (id) => {
     if (window.confirm("Esta Seguro??")) {
     }
@@ -33,15 +37,21 @@ const Cards = () => {
 
   console.log(posts);
 
+  const navigate = useNavigate();
+
+  /* Ojo con este useeffect, lo personalicé */
   useEffect(() => {
     dispatch(listPosts());
-  }, [dispatch]);
+    if (!userInfo) {
+      navigate("/signin");
+    }
+  }, [userInfo, dispatch, navigate]);
 
   return (
     <>
       <CardsContainer>
-        <CardsHeader>Bienvenido Ricardo</CardsHeader>
-        <Link to="createnpost">
+        <CardsHeader>Bienvenido {userInfo && userInfo.name}</CardsHeader>
+        <Link to="/createpost">
           <CardCreate> Create New Post </CardCreate>
         </Link>
         <CardWrapper>
@@ -62,7 +72,9 @@ const Cards = () => {
                   Borrar
                 </CardDelete>
               </CardButtons>
-              <CardDateCreated>Created - On</CardDateCreated>
+              <CardDateCreated>
+                Created - On {post.createdAt.substring(0, 10)}
+              </CardDateCreated>
               <CardCategory>{post.category}</CardCategory>
             </CardContainer>
           ))}
