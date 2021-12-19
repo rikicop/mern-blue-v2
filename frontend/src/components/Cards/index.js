@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 /* import Icon1 from "../../images/svg-2.svg"; */
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { listPosts } from "../../actions/postsActions";
 
 import {
   CardBody,
@@ -21,23 +22,20 @@ import {
 } from "./CardsElements";
 
 const Cards = () => {
-  const [notes, setNotes] = useState([]);
+  const dispatch = useDispatch();
+  const postList = useSelector((state) => state.postList);
+  const { loading, posts, error } = postList;
 
   const deleteHandler = (id) => {
     if (window.confirm("Esta Seguro??")) {
     }
   };
 
-  const fetchNotes = async () => {
-    const { data } = await axios.get("/api/notes");
-    setNotes(data);
-  };
-
-  console.log(notes);
+  console.log(posts);
 
   useEffect(() => {
-    fetchNotes();
-  }, []);
+    dispatch(listPosts());
+  }, [dispatch]);
 
   return (
     <>
@@ -47,23 +45,25 @@ const Cards = () => {
           <CardCreate> Create New Post </CardCreate>
         </Link>
         <CardWrapper>
-          {notes.map((pub) => (
-            <CardContainer key={pub._id}>
+          {error && <h5 style={{ color: "red" }}>{error}</h5>}
+          {loading && <h5 style={{ color: "white" }}>Loading...</h5>}
+          {posts?.map((post) => (
+            <CardContainer key={post._id}>
               <CardBody>
-                <CardImg src={pub.imagen} />
-                <CardTitle>{pub.title}</CardTitle>
-                <CardDescription>{pub.description}</CardDescription>
+                <CardImg src={post.pic} />
+                <CardTitle>{post.title}</CardTitle>
+                <CardDescription>{post.content}</CardDescription>
               </CardBody>
               <CardButtons>
-                <Link to={`/post/${pub._id}`}>
+                <Link to={`/post/${post._id}`}>
                   <CardEdit>Editar</CardEdit>
                 </Link>
-                <CardDelete onClick={() => deleteHandler(pub._id)}>
+                <CardDelete onClick={() => deleteHandler(post._id)}>
                   Borrar
                 </CardDelete>
               </CardButtons>
               <CardDateCreated>Created - On</CardDateCreated>
-              <CardCategory>{pub.category}</CardCategory>
+              <CardCategory>{post.category}</CardCategory>
             </CardContainer>
           ))}
         </CardWrapper>

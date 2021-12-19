@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
-<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="50" xmlns:dc="http://purl.org/dc/elements/1.1/" styles="unlocked" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.9.1" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:es; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="62" xmlns:dc="http://purl.org/dc/elements/1.1/" styles="unlocked" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.9.1" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:es; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
 <!-- ======================================================================== -->
 <!-- This file is an AbiWord document.                                        -->
 <!-- AbiWord is a free, Open Source word processor.                           -->
@@ -9,7 +9,7 @@
 <!-- ======================================================================== -->
 
 <metadata>
-<m key="abiword.date_last_changed">Sat Dec 18 16:45:47 2021
+<m key="abiword.date_last_changed">Sun Dec 19 11:13:05 2021
 </m>
 <m key="abiword.generator">AbiWord</m>
 <m key="dc.creator">ricardo</m>
@@ -19,14 +19,15 @@
 </metadata>
 <rdf>
 </rdf>
-<history version="18" edit-time="1957" last-saved="1639860347" uid="786d9e36-54b7-11ec-8474-df6fb2fa0575">
+<history version="19" edit-time="2084" last-saved="1639926785" uid="786d9e36-54b7-11ec-8474-df6fb2fa0575">
 <version id="2" started="1638590794" uid="a1c4acc0-54b7-11ec-8474-df6fb2fa0575" auto="0" top-xid="6"/>
 <version id="5" started="1638639133" uid="2b787aa8-5528-11ec-9bec-b1dc7fb4971d" auto="0" top-xid="15"/>
 <version id="9" started="1639190827" uid="5fa36f4a-5a2d-11ec-8b44-9a4e6d28bdb1" auto="0" top-xid="24"/>
 <version id="18" started="1639859183" uid="7a3cefe0-6043-11ec-86f4-ad5bc6f85c5c" auto="0" top-xid="36"/>
+<version id="19" started="1639926785" uid="2ad6ec9e-60de-11ec-964b-b7c8bb70bcd2" auto="0" top-xid="62"/>
 </history>
 <styles>
-<s type="P" name="Normal" followedby="Current Settings" props="font-weight:normal; font-family:Times New Roman; margin-top:0pt; color:000000; margin-left:0pt; text-align:left; widows:2; font-style:normal; text-indent:0in; text-position:normal; font-variant:normal; bgcolor:transparent; line-height:1.0; text-decoration:none; margin-bottom:0pt; margin-right:0pt; font-size:12pt; font-stretch:normal"/>
+<s type="P" name="Normal" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-style:normal; margin-left:0pt; bgcolor:transparent; widows:2; text-align:left; text-indent:0in; text-position:normal; margin-bottom:0pt; font-weight:normal; margin-right:0pt; font-size:12pt; font-variant:normal; text-decoration:none; line-height:1.0; color:000000; font-stretch:normal"/>
 </styles>
 <pagesize pagetype="A4" orientation="portrait" width="8.267717" height="11.692913" units="in" page-scale="1.000000"/>
 <section xid="5" props="page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-right:1.0000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
@@ -34,7 +35,7 @@
 <p style="Normal" xid="1"><c></c><c></c></p>
 <p style="Normal" xid="2">styling comoponent child ?<c></c></p>
 <p style="Normal" xid="3"><c></c><image dataid="2250b710-5528-11ec-9bec-df6fb2fa0575" xid="17" props="height:2.06in; width:3.91in"/></p>
-<p style="Normal" xid="12"><c props="font-weight:normal; font-stretch:inherit; text-transform:none; font-size:13.000000pt; font-style:normal"></c><c></c></p>
+<p style="Normal" xid="12"><c props="font-size:13.000000pt; font-weight:normal; text-transform:none; font-stretch:inherit; font-style:normal"></c><c></c></p>
 <p style="Normal" xid="10"><c></c><c></c></p>
 <p style="Normal" xid="4" props="text-align:left; dom-dir:ltr">https://github.com/styled-components/styled-components/issues/330<c></c></p>
 <p style="Normal" xid="7" props="text-align:left; dom-dir:ltr"><c></c><c></c></p>
@@ -45,27 +46,38 @@
 <p style="Normal" xid="21" props="text-align:center; dom-dir:ltr"><c props="color:800000; bgcolor:transparent"></c><c></c></p>
 <p style="Normal" xid="22" props="text-align:left; dom-dir:ltr"><c props="color:800000; bgcolor:transparent">POSTING</c><c props="color:800000; bgcolor:transparent"></c></p>
 <p style="Normal" xid="23" props="text-align:left; dom-dir:ltr"><c props="color:800000; bgcolor:transparent"></c><c></c></p>
-<p style="Normal" xid="32" props="text-align:left; dom-dir:ltr"><c props="font-family:Times New Roman; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:-none-">1. </c><c props="font-family:Times New Roman; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:-none-"></c><c props="font-family:Times New Roman; text-decoration:none; color:000080; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:-none-">1:33m </c><c props="font-family:Times New Roman; font-size:12pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal; lang:-none-">Catálogo de Productos</c></p>
+<p style="Normal" xid="32" props="text-align:left; dom-dir:ltr"><c props="font-family:Times New Roman; font-size:12pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal; lang:-none-">1. </c><c props="font-family:Times New Roman; font-size:12pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal; lang:-none-"></c><c props="font-family:Times New Roman; font-size:12pt; color:000080; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal; lang:-none-">1:33m </c><c props="font-family:Times New Roman; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:normal; font-style:normal; lang:-none-">Catálogo de Productos</c></p>
 <p style="Normal" xid="31" props="text-align:left; dom-dir:ltr"><c props="color:800000; bgcolor:transparent"></c><c></c></p>
 <p style="Normal" xid="24" props="text-align:left; dom-dir:ltr"><c props="color:000000; bgcolor:transparent">2. Crear y llenar la BD de los POSTS(o Productos ecommerce de</c><c props="color:000000; bgcolor:transparent"></c><c props="bgcolor:transparent; text-decoration:none; color:000000"> </c><c props="bgcolor:transparent; text-decoration:none; color:800000">The Full Stack Junkie</c><c props="color:000000; bgcolor:transparent">)</c></p>
 <p style="Normal" xid="29" props="text-align:left; dom-dir:ltr"><c props="color:000000; bgcolor:transparent"></c><c></c></p>
-<p style="Normal" xid="30" props="text-align:center; dom-dir:ltr"><c props="color:800000; bgcolor:transparent">18 Dic 2021</c></p>
-<p style="Normal" xid="33" props="text-align:center; dom-dir:ltr"><c props="color:800000; bgcolor:transparent"></c></p>
-<p style="Normal" xid="34" props="text-align:center; dom-dir:ltr"><c props="color:800000">Notes API with CRUD Operation in Node JS and Express JS - MERN Stack Tutorial #12</c></p>
-<p style="Normal" xid="35" props="text-align:center; dom-dir:ltr"><c props="color:800000"></c></p>
-<p style="Normal" xid="36" props="text-align:left; dom-dir:ltr"><c props="color:000000">1. 9:00 </c></p>
+<p style="Normal" xid="30" props="text-align:center; dom-dir:ltr"><c props="color:800000; bgcolor:transparent">18 Dic 2021</c><c props="color:800000; bgcolor:transparent"></c></p>
+<p style="Normal" xid="33" props="text-align:center; dom-dir:ltr"><c props="color:800000; bgcolor:transparent"></c><c></c></p>
+<p style="Normal" xid="34" props="text-align:center; dom-dir:ltr"><c props="color:800000">Notes API with CRUD Operation in Node JS and Express JS - MERN Stack Tutorial #12</c><c props="color:800000"></c></p>
+<p style="Normal" xid="35" props="text-align:center; dom-dir:ltr"><c props="color:800000"></c><c></c></p>
+<p style="Normal" xid="36" props="text-align:left; dom-dir:ltr"><c props="color:000000">1. 9:00 </c><c props="color:000000"></c></p>
 <p style="Normal" xid="39" props="text-align:left; dom-dir:ltr"><c props="color:000000"></c><c props="color:000000">Creo que esto sería como proteger la ruta.... es decir que se muestre cuando esté logeado.</c></p>
-<p style="Normal" xid="40" props="text-align:left; dom-dir:ltr"><c props="color:000000"></c></p>
-<p style="Normal" xid="41" props="text-align:left; dom-dir:ltr"><c props="color:000000">De hecho por eso se llama protect por que va a porteger la ruta de usuarios que no tengan autorización.</c></p>
-<p style="Normal" xid="42" props="text-align:left; dom-dir:ltr"><c props="color:000000"></c></p>
-<p style="Normal" xid="43" props="text-align:left; dom-dir:ltr"><c props="color:000000">El usuario debe pasar por este middleware </c><c>authMiddleware</c><c props="color:000000">.js para alcanzar la API</c></p>
-<p style="Normal" xid="37" props="text-align:left; dom-dir:ltr"><c props="color:800080"></c></p>
-<p style="Normal" xid="38" props="text-align:left; dom-dir:ltr"><c props="font-weight:normal; color:#202124; text-transform:none; font-size:10pt; font-style:normal">Autenticación de portador</c></p>
-<p style="Normal" xid="48" props="text-align:left; dom-dir:ltr"><c props="font-weight:normal; color:#202124; text-transform:none; font-size:10pt; font-style:normal"></c><c props="font-weight:normal; color:#202124; text-transform:none; font-size:10pt; font-style:normal"><br/>La autenticación de Bearer (también llamada autenticación de token)es un esquema de autenticación HTTP.</c><c props="font-size:10pt; font-weight:normal; text-transform:none; color:#202124; font-style:normal"> El nombre "Autenticación del portador" puede entenderse como "dar acceso al portador de este token". El token de portador es una cadena críptica, generalmente generada por el servidor en respuesta a una solicitud de inicio de sesión. El cliente debe enviar este token en el encabezado de Autorización cuando realiza solicitudes a recursos protegidos:<br/>Autorización: Portador &lt;token&gt;.</c></p>
-<p style="Normal" xid="49" props="text-align:left; dom-dir:ltr"><c props="font-size:10pt; font-weight:normal; text-transform:none; color:#202124; font-style:normal"></c></p>
-<p style="Normal" xid="50" props="text-align:left; dom-dir:ltr"><c props="font-size:10pt; font-weight:normal; text-transform:none; color:#202124; font-style:normal"></c></p>
-<p style="Normal" xid="44" props="text-align:left; dom-dir:ltr"><c props="font-weight:normal; color:#202124; text-transform:none; font-size:28.000000pt; font-style:normal"></c></p>
-<p style="Normal" xid="45" props="text-align:left; dom-dir:ltr"><c props="font-weight:normal; color:#202124; text-transform:none; font-size:28.000000pt; font-style:normal"></c></p>
+<p style="Normal" xid="40" props="text-align:left; dom-dir:ltr"><c props="color:000000"></c><c></c></p>
+<p style="Normal" xid="41" props="text-align:left; dom-dir:ltr"><c props="color:000000">De hecho por eso se llama protect por que va a porteger la ruta de usuarios que no tengan autorización.</c><c props="color:000000"></c></p>
+<p style="Normal" xid="42" props="text-align:left; dom-dir:ltr"><c props="color:000000"></c><c></c></p>
+<p style="Normal" xid="43" props="text-align:left; dom-dir:ltr"><c props="color:000000">El usuario debe pasar por este middleware </c><c props="color:000000"></c>authMiddleware<c props="color:000000">.js para alcanzar la API</c></p>
+<p style="Normal" xid="37" props="text-align:left; dom-dir:ltr"><c props="color:800080"></c><c></c></p>
+<p style="Normal" xid="38" props="text-align:left; dom-dir:ltr"><c props="font-size:10pt; font-weight:normal; text-transform:none; color:#202124; font-style:normal">Autenticación de portador</c><c props="font-size:10pt; font-weight:normal; text-transform:none; color:#202124; font-style:normal"></c></p>
+<p style="Normal" xid="48" props="text-align:left; dom-dir:ltr"><c props="font-size:10pt; font-weight:normal; text-transform:none; color:#202124; font-style:normal"></c><c props="font-size:10pt; font-weight:normal; text-transform:none; color:#202124; font-style:normal"><br/>La autenticación de Bearer (también llamada autenticación de token)es un esquema de autenticación HTTP.</c><c props="font-weight:normal; color:#202124; text-transform:none; font-size:10pt; font-style:normal"> El nombre "Autenticación del portador" puede entenderse como "dar acceso al portador de este token". El token de portador es una cadena críptica, generalmente generada por el servidor en respuesta a una solicitud de inicio de sesión. El cliente debe enviar este token en el encabezado de Autorización cuando realiza solicitudes a recursos protegidos:<br/>Autorización: Portador &lt;token&gt;.</c></p>
+<p style="Normal" xid="49" props="text-align:left; dom-dir:ltr"><c props="font-weight:normal; color:#202124; text-transform:none; font-size:10pt; font-style:normal"></c><c></c></p>
+<p style="Normal" xid="50" props="text-align:left; dom-dir:ltr"><c props="font-weight:normal; color:#202124; text-transform:none; font-size:10pt; font-style:normal"></c><c></c></p>
+<p style="Normal" xid="51" props="text-align:left; dom-dir:ltr"><c></c></p>
+<p style="Normal" xid="52" props="text-align:left; dom-dir:ltr"><c></c></p>
+<p style="Normal" xid="53" props="text-align:left; dom-dir:ltr"><c></c></p>
+<p style="Normal" xid="54" props="text-align:center; dom-dir:ltr"><c props="font-family:Times New Roman; font-size:12pt; color:800000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal; lang:-none-">19 Dic 2021</c></p>
+<p style="Normal" xid="58" props="text-align:center; dom-dir:ltr"><c props="font-family:Times New Roman; font-size:12pt; color:800000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal; lang:-none-"></c></p>
+<p style="Normal" xid="56" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; dom-dir:ltr; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="color:800000">Implementing Notes CRUD APIs in React JS with Redux - MERN Stack Tutorial #13</c></p>
+<p style="Normal" xid="59" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; dom-dir:ltr; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="color:800000"></c></p>
+<p style="Normal" xid="60" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; dom-dir:ltr; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="color:000000">1. 4:50 getState() y Seguidamente Depués explica como aplicar la </c><c props="font-weight:bold; color:000080">protect route</c><c props="color:000000"> con </c><c props="font-weight:bold; color:000080">react</c></p>
+<p style="Normal" xid="61" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; dom-dir:ltr; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-weight:bold; color:000080"></c></p>
+<p style="Normal" xid="62" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; dom-dir:ltr; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-weight:bold; color:000080"></c></p>
+<p style="Normal" xid="55" props="font-family:Times New Roman; text-decoration:none; dom-dir:ltr; color:800000; font-size:12pt; font-weight:normal; text-position:normal; text-align:center; font-style:normal; lang:-none-"><c></c></p>
+<p style="Normal" xid="44" props="text-align:left; dom-dir:ltr"><c props="font-size:28.000000pt; font-weight:normal; text-transform:none; color:#202124; font-style:normal"></c><c></c></p>
+<p style="Normal" xid="45" props="text-align:left; dom-dir:ltr"><c props="font-size:28.000000pt; font-weight:normal; text-transform:none; color:#202124; font-style:normal"></c></p>
 </section>
 <data>
 <d name="2250b710-5528-11ec-9bec-df6fb2fa0575" mime-type="image/png" base64="yes">

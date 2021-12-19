@@ -10,10 +10,10 @@ const app = express();
 connectDB();
 app.use(express.json());
 
-app.get("/", (req, res) => {
+/* app.get("/", (req, res) => {
   res.send("API is running...");
 });
-
+*/
 app.get("/api/notes", (req, res) => {
   res.send(notes);
 });
