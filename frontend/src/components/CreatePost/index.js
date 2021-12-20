@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Container,
   FormWrap,
@@ -8,37 +8,53 @@ import {
   FormLabel,
   FormInput,
   FormButton,
+  Text,
 } from "./CreatePElements";
-import { register } from "../../actions/userActions";
+import { createPostAction } from "../../actions/postsActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import ReactMarkdown from "react-markdown";
 
 function CreatePost() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [category, setCategory] = useState("");
   const [pic, setPic] = useState(
     "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
   );
-  const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const [picMessage, setPicMessage] = useState(null);
+
+  /* const [message, setMessage] = useState("") */ const [
+    picMessage,
+    setPicMessage,
+  ] = useState(null);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userRegister = useSelector((state) => state.userRegister);
-  const { loading, error, userInfo } = userRegister;
-  useEffect(() => {
+  const postCreate = useSelector((state) => state.postCreate);
+  const { loading, error, post } = postCreate;
+
+  console.log(post);
+  /*  useEffect(() => {
     if (userInfo) {
       navigate("/myposts");
     }
-  }, [navigate, userInfo]);
+  }, [navigate, userInfo]);  */
+
+  const resetHandler = () => {
+    setTitle("");
+    setCategory("");
+    setContent("");
+    /* setPic(""); */
+  };
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (password !== confirmpassword) {
-      setMessage("Passwords do not match");
-    } else dispatch(register(name, email, password, pic));
+    dispatch(createPostAction(title, content, category, pic));
+    /* !pic <-- don't konw */
+    if (!title || !content || !category) return;
+
+    resetHandler();
+    navigate("/myposts");
   };
 
   const postDetails = (pics) => {
@@ -76,39 +92,37 @@ function CreatePost() {
           <FormContent>
             <Form onSubmit={submitHandler}>
               {error && <h3 style={{ color: "#6c0c0c" }}>{error}</h3>}
-              {message && <h3 style={{ color: "#6c0c0c" }}>{message}</h3>}
               {loading && <h5>Loading...</h5>}
               <FormH1> Create Post </FormH1>
-              <FormLabel htmlForm="for"> Nombre </FormLabel>
+              <FormLabel htmlForm="for"> Título </FormLabel>
               <FormInput
                 type="text"
-                value={name}
-                placeholder="Introduce Nombre"
-                onChange={(e) => setName(e.target.value)}
+                value={title}
+                placeholder="Introduce Título"
+                onChange={(e) => setTitle(e.target.value)}
                 required
               />
-              <FormLabel htmlForm="for"> Email </FormLabel>
+              <FormLabel htmlForm="for"> Content </FormLabel>
               <FormInput
-                type="email"
-                value={email}
-                placeholder="Introduce Email"
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                value={content}
+                placeholder="Introduce Contenido"
+                onChange={(e) => setContent(e.target.value)}
                 required
               />
-              <FormLabel htmlForm="for"> Password </FormLabel>
+              {content && (
+                <>
+                  <FormLabel htmlForm="for">Note Preview</FormLabel>
+                  <ReactMarkdown>{content}</ReactMarkdown>
+                </>
+              )}
+              <FormLabel htmlForm="for"> Category </FormLabel>
               <FormInput
-                type="password"
-                value={password}
-                placeholder="Introduce Password"
-                onChange={(e) => setPassword(e.target.value)}
+                type="text"
+                value={category}
+                placeholder="Introduce Categoria"
+                onChange={(e) => setCategory(e.target.value)}
                 required
-              />
-              <FormLabel htmlForm="for"> Confirm Password </FormLabel>
-              <FormInput
-                type="password"
-                value={confirmpassword}
-                placeholder="Confirm Password"
-                onChange={(e) => setConfirmPassword(e.target.value)}
               />
               {picMessage && <h5 style={{ color: "white" }}>{picMessage}</h5>}
               <FormLabel htmlForm="for"> Profile Picture </FormLabel>
@@ -117,8 +131,11 @@ function CreatePost() {
                 placeholder="Introduce Dirección Imagen"
                 onChange={(e) => postDetails(e.target.files[0])}
               />
-
-              <FormButton type="submit">Registrar</FormButton>
+              <FormButton type="submit">Ingresar</FormButton>
+              <button style={{ background: "red" }} onClick={resetHandler}>
+                Reset Fields
+              </button>
+              <Text>Creating on - {new Date().toLocaleDateString()}</Text>
               {/* <Text>
                 Nuevo? <Link to="/register">Registrate Aquí!</Link>
               </Text> */}
