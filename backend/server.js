@@ -14,9 +14,9 @@ app.use(express.json());
   res.send("API is running...");
 });
 */
-app.get("/api/notes", (req, res) => {
+/* app.get("/api/notes", (req, res) => {
   res.send(notes);
-});
+}); */
 
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);

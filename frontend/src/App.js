@@ -8,6 +8,7 @@ import { SigninScreen } from "./screens/SigninScreen";
 import { MyPostsScreen } from "./screens/MyPostsScreen";
 import { RegisterScreen } from "./screens/RegisterScreen";
 import { CreatePostScreen } from "./screens/CreatePostScreen";
+import { SinglePostScreen } from "./screens/SinglePostScreen";
 // Components
 import Navbar from "./components/Navbar";
 import Backdrop from "./components/Backdrop";
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/signin" element={<SigninScreen />} />
           <Route exact path="/register" element={<RegisterScreen />} />
           <Route exact path="/createpost" element={<CreatePostScreen />} />
+          <Route exact path="/post/:id" element={<SinglePostScreen />} />
           <Route exact path="/myposts" element={<MyPostsScreen />} />
         </Routes>
       </main>

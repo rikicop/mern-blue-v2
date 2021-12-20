@@ -30,6 +30,12 @@ const Cards = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
+  const postCreate = useSelector((state) => state.postCreate);
+  const { success: successCreate } = postCreate;
+
+  const postUpdate = useSelector((state) => state.postUpdate);
+  const { success: successUpdate } = postUpdate;
+
   const deleteHandler = (id) => {
     if (window.confirm("Esta Seguro??")) {
     }
@@ -45,7 +51,7 @@ const Cards = () => {
     if (!userInfo) {
       navigate("/signin");
     }
-  }, [userInfo, dispatch, navigate]);
+  }, [userInfo, dispatch, navigate, successCreate, successUpdate]);
 
   return (
     <>
@@ -57,7 +63,7 @@ const Cards = () => {
         <CardWrapper>
           {error && <h5 style={{ color: "red" }}>{error}</h5>}
           {loading && <h5 style={{ color: "white" }}>Loading...</h5>}
-          {posts?.map((post) => (
+          {posts?.reverse().map((post) => (
             <CardContainer key={post._id}>
               <CardBody>
                 <CardImg src={post.pic} />

@@ -5,6 +5,9 @@ import {
   POSTS_LIST_FAIL,
   POSTS_LIST_REQUEST,
   POSTS_LIST_SUCCESS,
+  POSTS_UPDATE_FAIL,
+  POSTS_UPDATE_REQUEST,
+  POSTS_UPDATE_SUCCESS,
 } from "../constants/postsConstants";
 import axios from "axios";
 
@@ -43,7 +46,7 @@ export const listPosts = () => async (dispatch, getState) => {
 };
 
 export const createPostAction =
-  (title, content, category) => async (dispatch, getState) => {
+  (title, content, category, pic) => async (dispatch, getState) => {
     try {
       dispatch({
         type: POSTS_CREATE_REQUEST,
@@ -62,7 +65,7 @@ export const createPostAction =
 
       const { data } = await axios.post(
         `/api/posts/create`,
-        { title, content, category },
+        { title, content, category, pic },
         config
       );
 
@@ -77,6 +80,46 @@ export const createPostAction =
           : error.message;
       dispatch({
         type: POSTS_CREATE_FAIL,
+        payload: message,
+      });
+    }
+  };
+
+export const updatePostAction =
+  (id, title, content, category, pic) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: POSTS_UPDATE_REQUEST,
+      });
+
+      const {
+        userLogin: { userInfo },
+      } = getState();
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+
+      const { data } = await axios.put(
+        `/api/posts/${id}`,
+        { title, content, category, pic },
+        config
+      );
+
+      dispatch({
+        type: POSTS_UPDATE_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      const message =
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message;
+      dispatch({
+        type: POSTS_UPDATE_FAIL,
         payload: message,
       });
     }

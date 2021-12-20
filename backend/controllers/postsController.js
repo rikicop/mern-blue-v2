@@ -7,14 +7,20 @@ const getPosts = asyncHandler(async (req, res) => {
 });
 
 const createPost = asyncHandler(async (req, res) => {
-  const { title, content, category } = req.body;
+  const { title, content, category, pic } = req.body;
 
-  if (!title || !content || !category) {
+  if (!title || !content || !category || !pic) {
     res.status(400);
     throw new Error("Please Fill all the feilds");
     return;
   } else {
-    const post = new Post({ user: req.user._id, title, content, category });
+    const post = new Post({
+      user: req.user._id,
+      title,
+      content,
+      category,
+      pic,
+    });
 
     const createdPost = await post.save();
 
@@ -28,12 +34,12 @@ const getPostById = asyncHandler(async (req, res) => {
   if (post) {
     res.json(post);
   } else {
-    res.status(404).json({ message: "Note not found" });
+    res.status(404).json({ message: "Post not found" });
   }
 });
 
 const UpdatePost = asyncHandler(async (req, res) => {
-  const { title, content, category } = req.body;
+  const { title, content, category, pic } = req.body;
   const post = await Post.findById(req.params.id);
 
   if (post.user.toString() !== req.user._id.toString()) {
@@ -45,6 +51,7 @@ const UpdatePost = asyncHandler(async (req, res) => {
     post.title = title;
     post.content = content;
     post.category = category;
+    post.pic = pic;
 
     const updatedPost = await post.save();
     res.json(updatedPost);

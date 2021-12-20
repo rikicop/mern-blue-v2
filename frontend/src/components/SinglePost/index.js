@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   FormWrap,
@@ -9,27 +9,28 @@ import {
   FormInput,
   FormButton,
   Text,
-} from "./CreatePElements";
-import { createPostAction } from "../../actions/postsActions";
+} from "./SinglePElements";
+import { updatePostAction } from "../../actions/postsActions";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import ReactMarkdown from "react-markdown";
+import axios from "axios";
 
-function CreatePost() {
+function SinglePost() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
   const [pic, setPic] = useState(
     "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
   );
-
-  /* const [message, setMessage] = useState("") */
   const [picMessage, setPicMessage] = useState(null);
-
+  const [date, setDate] = useState("");
+  /* const [message, setMessage] = useState("") */
+  let { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const postCreate = useSelector((state) => state.postCreate);
-  const { loading, error, post } = postCreate;
+  const postUpdate = useSelector((state) => state.postUpdate);
+  const { loading, error, post } = postUpdate;
 
   console.log(post);
   /*  useEffect(() => {
@@ -38,6 +39,19 @@ function CreatePost() {
     }
   }, [navigate, userInfo]);  */
 
+  useEffect(() => {
+    const fetching = async () => {
+      const { data } = await axios.get(`/api/posts/${id}`);
+
+      setTitle(data.title);
+      setContent(data.content);
+      setCategory(data.category);
+      setPic(data.pic);
+      setDate(data.updateAt);
+    };
+    fetching();
+  }, [id, date]);
+
   const resetHandler = () => {
     setTitle("");
     setCategory("");
@@ -45,11 +59,10 @@ function CreatePost() {
     setPic("");
   };
 
-  const submitHandler = async (e) => {
+  const updateHandler = async (e) => {
     e.preventDefault();
+    dispatch(updatePostAction(id, title, content, category, pic));
     if (!title || !content || !category || !pic) return;
-    dispatch(createPostAction(title, content, category, pic));
-
     resetHandler();
     navigate("/myposts");
   };
@@ -87,10 +100,10 @@ function CreatePost() {
       <Container>
         <FormWrap>
           <FormContent>
-            <Form onSubmit={submitHandler}>
+            <Form onSubmit={updateHandler}>
+              {/*  {loading && <h5>Loading...</h5>} */}
               {error && <h3 style={{ color: "#6c0c0c" }}>{error}</h3>}
-              {loading && <h5>Loading...</h5>}
-              <FormH1> Create Post </FormH1>
+              <FormH1> Update Post </FormH1>
               <FormLabel htmlForm="for"> Título </FormLabel>
               <FormInput
                 type="text"
@@ -109,7 +122,7 @@ function CreatePost() {
               />
               {content && (
                 <>
-                  <FormLabel htmlForm="for">Note Preview</FormLabel>
+                  <FormLabel htmlForm="for">Post Preview</FormLabel>
                   <ReactMarkdown>{content}</ReactMarkdown>
                 </>
               )}
@@ -128,11 +141,13 @@ function CreatePost() {
                 placeholder="Introduce Dirección Imagen"
                 onChange={(e) => postDetails(e.target.files[0])}
               />
-              <FormButton type="submit">Ingresar</FormButton>
-              <button style={{ background: "red" }} onClick={resetHandler}>
+              {loading && <h5>Loading...</h5>}
+              <FormButton type="submit">Update Post</FormButton>
+              <button style={{ background: "red" }}>Delete</button>
+              <button style={{ background: "yellow" }} onClick={resetHandler}>
                 Reset Fields
               </button>
-              <Text>Creating on - {new Date().toLocaleDateString()}</Text>
+              {/* <Text>Updated on - {date.substring(0, 10)}</Text> */}
               {/* <Text>
                 Nuevo? <Link to="/register">Registrate Aquí!</Link>
               </Text> */}
@@ -143,4 +158,4 @@ function CreatePost() {
     </>
   );
 }
-export default CreatePost;
+export default SinglePost;
