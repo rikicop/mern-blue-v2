@@ -2,6 +2,9 @@ import {
   POSTS_CREATE_FAIL,
   POSTS_CREATE_REQUEST,
   POSTS_CREATE_SUCCESS,
+  POSTS_DELETE_FAIL,
+  POSTS_DELETE_REQUEST,
+  POSTS_DELETE_SUCCESS,
   POSTS_LIST_FAIL,
   POSTS_LIST_REQUEST,
   POSTS_LIST_SUCCESS,
@@ -124,3 +127,37 @@ export const updatePostAction =
       });
     }
   };
+
+export const deletePostAction = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: POSTS_DELETE_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    const { data } = await axios.delete(`/api/posts/${id}`, config);
+
+    dispatch({
+      type: POSTS_DELETE_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({
+      type: POSTS_DELETE_FAIL,
+      payload: message,
+    });
+  }
+};

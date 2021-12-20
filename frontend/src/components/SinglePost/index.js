@@ -47,7 +47,7 @@ function SinglePost() {
       setContent(data.content);
       setCategory(data.category);
       setPic(data.pic);
-      setDate(data.updateAt);
+      setDate(data.updatedAt);
     };
     fetching();
   }, [id, date]);
@@ -147,7 +147,7 @@ function SinglePost() {
               <button style={{ background: "yellow" }} onClick={resetHandler}>
                 Reset Fields
               </button>
-              {/* <Text>Updated on - {date.substring(0, 10)}</Text> */}
+              <Text>Updated on - {date.substring(0, 10)}</Text>
               {/* <Text>
                 Nuevo? <Link to="/register">Registrate Aquí!</Link>
               </Text> */}
