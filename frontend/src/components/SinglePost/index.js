@@ -10,7 +10,7 @@ import {
   FormButton,
   Text,
 } from "./SinglePElements";
-import { updatePostAction } from "../../actions/postsActions";
+import { deletePostAction, updatePostAction } from "../../actions/postsActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import ReactMarkdown from "react-markdown";
@@ -29,8 +29,19 @@ function SinglePost() {
   let { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const postUpdate = useSelector((state) => state.postUpdate);
   const { loading, error, post } = postUpdate;
+
+  const postDelete = useSelector((state) => state.postDelete);
+  const { loading: loadingDelete, error: errorDelete } = postDelete;
+
+  const deleteHandler = (id) => {
+    if (window.confirm("Esta Seguro??")) {
+      dispatch(deletePostAction(id));
+    }
+    navigate("/myposts");
+  };
 
   console.log(post);
   /*  useEffect(() => {
@@ -101,7 +112,8 @@ function SinglePost() {
         <FormWrap>
           <FormContent>
             <Form onSubmit={updateHandler}>
-              {/*  {loading && <h5>Loading...</h5>} */}
+              {errorDelete && <h5 style={{ color: "red" }}>{errorDelete}</h5>}
+              {loadingDelete && <h5 style={{ color: "white" }}>Loading...</h5>}
               {error && <h3 style={{ color: "#6c0c0c" }}>{error}</h3>}
               <FormH1> Update Post </FormH1>
               <FormLabel htmlForm="for"> Título </FormLabel>
@@ -143,7 +155,12 @@ function SinglePost() {
               />
               {loading && <h5>Loading...</h5>}
               <FormButton type="submit">Update Post</FormButton>
-              <button style={{ background: "red" }}>Delete</button>
+              <button
+                style={{ background: "red" }}
+                onClick={() => deleteHandler(id)}
+              >
+                Delete
+              </button>
               <button style={{ background: "yellow" }} onClick={resetHandler}>
                 Reset Fields
               </button>
