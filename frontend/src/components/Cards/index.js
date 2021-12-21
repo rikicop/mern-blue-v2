@@ -70,7 +70,6 @@ const Cards = () => {
     successCreate,
     successUpdate,
     successDelete,
-    search,
   ]);
 
   return (
