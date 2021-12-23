@@ -11,36 +11,47 @@ import {
   PicContainer,
   FormPic,
 } from "./UpdatePElements";
-import { register } from "../../actions/userActions";
+import { updateProfile } from "../../actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
 function UpdateProfile() {
-  const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [pic, setPic] = useState(
-    "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
-  );
+  const [email, setEmail] = useState("");
+  const [pic, setPic] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const [picMessage, setPicMessage] = useState(null);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userRegister = useSelector((state) => state.userRegister);
-  const { loading, error, userInfo } = userRegister;
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const userUpdate = useSelector((state) => state.userUpdate);
+  const { loading, error, success } = userUpdate;
+
+  const navigate = useNavigate();
+
   useEffect(() => {
-    if (userInfo) {
-      navigate("/myposts");
+    if (!userInfo) {
+      navigate("/");
+    } else {
+      setName(userInfo.name);
+      setEmail(userInfo.email);
+      setPic(userInfo.pic);
+      console.log(success);
     }
-  }, [navigate, userInfo]);
+  }, [navigate, userInfo, success]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmpassword) {
       setMessage("Passwords do not match");
-    } else dispatch(register(name, email, password, pic));
+    } else {
+      dispatch(updateProfile({ name, email, password, pic }));
+    }
   };
 
   const postDetails = (pics) => {
@@ -77,9 +88,13 @@ function UpdateProfile() {
         <FormWrap>
           <FormContent>
             <Form onSubmit={submitHandler}>
-              {error && <h3 style={{ color: "#6c0c0c" }}>{error}</h3>}
-              {message && <h3 style={{ color: "#6c0c0c" }}>{message}</h3>}
               {loading && <h5>Loading...</h5>}
+              {message && <h3 style={{ color: "#6c0c0c" }}>{message}</h3>}
+              {success && (
+                <h5 style={{ color: "green" }}>Updated Successfully</h5>
+              )}
+              {error && <h3 style={{ color: "#6c0c0c" }}>{error}</h3>}
+
               <FormH1> Update Profile </FormH1>
               <PicContainer>
                 <FormPic src={pic} />
@@ -106,7 +121,6 @@ function UpdateProfile() {
                 value={password}
                 placeholder="Introduce Password"
                 onChange={(e) => setPassword(e.target.value)}
-                required
               />
               <FormLabel htmlForm="for"> Confirm Password </FormLabel>
               <FormInput
