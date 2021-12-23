@@ -76,7 +76,8 @@ const Cards = () => {
     <>
       <CardsContainer>
         <br />
-        <CardsHeader>Bienvenido {userInfo && userInfo.name}</CardsHeader>
+        <CardsHeader>Bienvenido {userInfo && userInfo?.name}</CardsHeader>
+        <Link to="/profile">Editar Perfil</Link>
         <br />
         <div>
           <FaSearch color="white" />

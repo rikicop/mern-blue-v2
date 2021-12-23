@@ -5,6 +5,7 @@ import { ProductScreen } from "./screens/ProductScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { CartScreen } from "./screens/CartScreen";
 import { SigninScreen } from "./screens/SigninScreen";
+import { ProfileScreen } from "./screens/ProfileScreen";
 import { MyPostsScreen } from "./screens/MyPostsScreen";
 import { RegisterScreen } from "./screens/RegisterScreen";
 import { CreatePostScreen } from "./screens/CreatePostScreen";
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/product/:id" element={<ProductScreen />} />
           <Route exact path="/cart" element={<CartScreen />} />
           <Route exact path="/signin" element={<SigninScreen />} />
+          <Route exact path="/profile" element={<ProfileScreen />} />
           <Route exact path="/register" element={<RegisterScreen />} />
           <Route exact path="/createpost" element={<CreatePostScreen />} />
           <Route exact path="/post/:id" element={<SinglePostScreen />} />
