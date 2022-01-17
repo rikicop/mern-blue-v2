@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaUpload } from "react-icons/fa";
 /* import { Link } from "react-router-dom"; */
 /* import Navbar from "../Navbar/Navbar"; */
 import {
@@ -10,6 +11,8 @@ import {
   FormLabel,
   FormInput,
   FormButton,
+  LabelFileUpload,
+  FormInputFile,
 } from "./RegisterElements";
 import { register } from "../../actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
@@ -47,7 +50,7 @@ function Register() {
     if (!pics) {
       return setPicMessage("Please Select an Image...");
     }
-    setPicMessage(null);
+    setPicMessage(`Imagen Cargada:  ...${pics.name.slice(-10)}`);
 
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
@@ -112,18 +115,30 @@ function Register() {
                 placeholder="Confirm Password"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
-              {picMessage && <h5 style={{ color: "white" }}>{picMessage}</h5>}
-              <FormLabel htmlForm="for"> Profile Picture </FormLabel>
-              <FormInput
-                type="file"
-                placeholder="Introduce Dirección Imagen"
-                onChange={(e) => postDetails(e.target.files[0])}
-              />
+              <LabelFileUpload>
+                <FormInputFile
+                  type="file"
+                  onChange={(e) => postDetails(e.target.files[0])}
+                />
+
+                <div
+                  style={{
+                    justifyContent: "center",
+                    display: "flex",
+                  }}
+                >
+                  <div style={{ float: "left", paddingLeft: "2px" }}>
+                    {!picMessage && <p>Profile Picture</p>}
+                  </div>
+                  <div style={{ float: "left", paddingLeft: "10px" }}>
+                    <FaUpload />
+                  </div>
+                </div>
+
+                {picMessage && <h5 style={{ color: "white" }}>{picMessage}</h5>}
+              </LabelFileUpload>
 
               <FormButton type="submit">Registrar</FormButton>
-              {/* <Text>
-                Nuevo? <Link to="/register">Registrate Aquí!</Link>
-              </Text> */}
             </Form>
           </FormContent>
         </FormWrap>

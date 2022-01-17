@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-  min-height: 692px;
+  min-height: fit-content;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -25,7 +25,7 @@ export const FormWrap = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 400px) {
-    height: 67%;
+    height: 64%;
   }
 `;
 
@@ -49,7 +49,11 @@ export const FormContent = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 400px) {
+    margin-top: 100px;
+    padding: 10px;
+  }
+  @media (min-width: 401px) and (max-width: 1199px) {
     margin-top: 200px;
     padding: 10px;
   }
@@ -65,10 +69,6 @@ export const Form = styled.form`
   padding: 60px 32px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
-
-  /*  @media screen and (max-width: 400px) {
-    padding: 32px 32px;
-  } */
 `;
 
 export const FormH1 = styled.h1`
@@ -88,7 +88,20 @@ export const FormInput = styled.input`
   padding: 10px 10px;
   margin-bottom: 25px;
   border: none;
+  color: whitesmoke;
   border-radius: 4px;
+`;
+
+export const FormInputFile = styled.input`
+  display: none;
+`;
+
+export const LabelFileUpload = styled.label`
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: whitesmoke;
 `;
 
 export const FormButton = styled.button`
