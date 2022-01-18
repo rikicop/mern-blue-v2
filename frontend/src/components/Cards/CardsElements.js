@@ -95,27 +95,27 @@ export const CardCreate = styled.button`
 export const CardEdit = styled.button`
   padding: 1rem;
   font-family: inherit;
-  font-weight:bold;
-  font-size:
-  margin:1rem;
-  border:2px solid blue;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid blue;
   background: transparent;
   color: blue;
-  border-radius:10px;
+  border-radius: 10px;
   transition: background 200ms ease-in, color 200ms ease-in;
 `;
 
 export const CardDelete = styled.button`
- padding: 1rem;
- font-family: inherit;
- font-weight:bold;
- font-size:
- margin:1rem;
- border:2px solid red;
- background: transparent;
- color: red;
- border-radius:10px;
- transition: background 200ms ease-in, color 200ms ease-in;
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid red;
+  background: transparent;
+  color: red;
+  border-radius: 10px;
+  transition: background 200ms ease-in, color 200ms ease-in;
 `;
 
 export const CardDateCreated = styled.p`
