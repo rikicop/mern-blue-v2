@@ -14,6 +14,8 @@ import { createPostAction } from "../../actions/postsActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import ReactMarkdown from "react-markdown";
+import { FaUpload } from "react-icons/fa";
+import { FormInputFile, LabelFileUpload } from "../Register/RegisterElements";
 
 function CreatePost() {
   const [title, setTitle] = useState("");
@@ -58,7 +60,7 @@ function CreatePost() {
     if (!pics) {
       return setPicMessage("Please Select an Image...");
     }
-    setPicMessage(null);
+    setPicMessage(`Imagen Cargada:  ...${pics.name.slice(-10)}`);
 
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
@@ -121,21 +123,67 @@ function CreatePost() {
                 onChange={(e) => setCategory(e.target.value)}
                 required
               />
-              {picMessage && <h5 style={{ color: "white" }}>{picMessage}</h5>}
-              <FormLabel htmlForm="for"> Profile Picture </FormLabel>
-              <FormInput
-                type="file"
-                placeholder="Introduce Dirección Imagen"
-                onChange={(e) => postDetails(e.target.files[0])}
-              />
-              <FormButton type="submit">Ingresar</FormButton>
-              <button style={{ background: "red" }} onClick={resetHandler}>
-                Reset Fields
-              </button>
+              <LabelFileUpload>
+                <FormInputFile
+                  type="file"
+                  onChange={(e) => postDetails(e.target.files[0])}
+                />
+
+                <div
+                  style={{
+                    justifyContent: "center",
+                    display: "flex",
+                  }}
+                >
+                  <div
+                    style={{
+                      float: "left",
+                      paddingLeft: "2px",
+                    }}
+                  >
+                    {!picMessage && <p>Post Picture</p>}
+                  </div>
+                  <div style={{ float: "left", paddingLeft: "10px" }}>
+                    <FaUpload />
+                  </div>
+                </div>
+                <div
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  {picMessage && (
+                    <h5 style={{ color: "white" }}>{picMessage}</h5>
+                  )}
+                </div>
+              </LabelFileUpload>
+              <div
+                style={{
+                  justifyContent: "center",
+                  display: "flex",
+                  marginTop: "20px",
+                }}
+              >
+                <div
+                  style={{
+                    float: "left",
+                    paddingLeft: "2px",
+                  }}
+                >
+                  <FormButton type="submit">Ingresar</FormButton>
+                </div>
+                <div
+                  style={{
+                    float: "left",
+                    paddingLeft: "10px",
+                  }}
+                >
+                  <button style={{ background: "red" }} onClick={resetHandler}>
+                    Reset Fields
+                  </button>
+                </div>
+              </div>
               <Text>Creating on - {new Date().toLocaleDateString()}</Text>
-              {/* <Text>
-                Nuevo? <Link to="/register">Registrate Aquí!</Link>
-              </Text> */}
             </Form>
           </FormContent>
         </FormWrap>

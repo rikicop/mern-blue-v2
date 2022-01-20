@@ -134,8 +134,15 @@ function Register() {
                     <FaUpload />
                   </div>
                 </div>
-
-                {picMessage && <h5 style={{ color: "white" }}>{picMessage}</h5>}
+                <div
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  {picMessage && (
+                    <h5 style={{ color: "white" }}>{picMessage}</h5>
+                  )}
+                </div>
               </LabelFileUpload>
 
               <FormButton type="submit">Registrar</FormButton>

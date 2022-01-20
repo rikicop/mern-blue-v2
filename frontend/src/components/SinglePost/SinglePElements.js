@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-  min-height: 692px;
+  min-height: fit-content;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -56,7 +56,7 @@ export const FormContent = styled.div`
 `;
 export const Form = styled.form`
   background: #0050d5;
-  max-width: 400px;
+  max-width: fit-content;
   height: auto;
   width: 100%;
   z-index: 1;

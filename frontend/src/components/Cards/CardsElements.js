@@ -82,13 +82,13 @@ export const CardButtons = styled.div`
 export const CardCreate = styled.button`
   padding: 1rem;
   font-family: inherit;
-  font-weight:bold;
-  font-size:
-  margin:1rem;
-  border:2px solid skyblue;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid skyblue;
   background: transparent;
   color: skyblue;
-  border-radius:10px;
+  border-radius: 10px;
   transition: background 200ms ease-in, color 200ms ease-in;
 `;
 
