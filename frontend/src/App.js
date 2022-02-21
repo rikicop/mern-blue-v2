@@ -7,6 +7,7 @@ import { CartScreen } from "./screens/CartScreen";
 import { SigninScreen } from "./screens/SigninScreen";
 import { ProfileScreen } from "./screens/ProfileScreen";
 import { MyPostsScreen } from "./screens/MyPostsScreen";
+import { BlogScreen } from "./screens/BlogScreen";
 import { RegisterScreen } from "./screens/RegisterScreen";
 import { CreatePostScreen } from "./screens/CreatePostScreen";
 import { SinglePostScreen } from "./screens/SinglePostScreen";
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/createpost" element={<CreatePostScreen />} />
           <Route exact path="/post/:id" element={<SinglePostScreen />} />
           <Route exact path="/myposts" element={<MyPostsScreen />} />
+          <Route exact path="/blog" element={<BlogScreen />} />
         </Routes>
       </main>
     </Router>
