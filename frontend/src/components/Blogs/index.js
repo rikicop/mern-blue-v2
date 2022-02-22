@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 /* import Icon1 from "../../images/svg-2.svg"; */
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { deletePostAction, listPosts } from "../../actions/postsActions";
+import { listBlog } from "../../actions/blogActions";
 import { useNavigate } from "react-router";
 
 import {
@@ -11,9 +11,7 @@ import {
   CardButtons,
   CardCategory,
   CardContainer,
-  CardCreate,
   CardDateCreated,
-  CardDelete,
   CardDescription,
   CardEdit,
   CardImg,
@@ -21,63 +19,30 @@ import {
   CardsHeader,
   CardTitle,
   CardWrapper,
-} from "./BlogElements";
+} from "./BlogsElements";
 
 const Cards = () => {
   const [search, setSearch] = useState("");
   console.log(search);
 
   const dispatch = useDispatch();
-  const postList = useSelector((state) => state.postList);
-  const { loading, posts, error } = postList;
+  const blogsList = useSelector((state) => state.blogsList);
+  const { loading, posts, error } = blogsList;
 
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
-
-  const postCreate = useSelector((state) => state.postCreate);
-  const { success: successCreate } = postCreate;
-
-  const postUpdate = useSelector((state) => state.postUpdate);
-  const { success: successUpdate } = postUpdate;
-
-  const postDelete = useSelector((state) => state.postDelete);
-  const {
-    loading: loadingDelete,
-    error: errorDelete,
-    success: successDelete,
-  } = postDelete;
-
-  const deleteHandler = (id) => {
-    if (window.confirm("Esta Seguro??")) {
-      dispatch(deletePostAction(id));
-    }
-  };
-
-  console.log(posts);
+  console.log("Estos son los posts :", posts);
 
   const navigate = useNavigate();
 
   /* Ojo con este useeffect, lo personalicé */
   useEffect(() => {
-    dispatch(listPosts());
-    if (!userInfo) {
-      navigate("/signin");
-    }
-  }, [
-    userInfo,
-    dispatch,
-    navigate,
-    successCreate,
-    successUpdate,
-    successDelete,
-  ]);
+    dispatch(listBlog());
+  }, [dispatch, navigate]);
 
   return (
     <>
       <CardsContainer>
         <br />
-        <CardsHeader>Bienvenido {userInfo && userInfo?.name}</CardsHeader>
-        <Link to="/profile">Editar Perfil</Link>
+        <CardsHeader>Bienvenido </CardsHeader>
         <br />
         <div>
           <FaSearch color="white" />
@@ -88,12 +53,7 @@ const Cards = () => {
           />
         </div>
         <br />
-        <Link to="/createpost">
-          <CardCreate> Create New Post </CardCreate>
-        </Link>
         <CardWrapper>
-          {errorDelete && <h5 style={{ color: "red" }}>{errorDelete}</h5>}
-          {loadingDelete && <h5 style={{ color: "white" }}>Loading...</h5>}
           {error && <h5 style={{ color: "red" }}>{error}</h5>}
           {loading && <h5 style={{ color: "white" }}>Loading...</h5>}
           {posts
@@ -109,12 +69,9 @@ const Cards = () => {
                   <CardDescription>{post.content}</CardDescription>
                 </CardBody>
                 <CardButtons>
-                  <Link to={`/post/${post._id}`}>
-                    <CardEdit>Editar</CardEdit>
+                  <Link to={`/blog/${post._id}`}>
+                    <CardEdit>Ver</CardEdit>
                   </Link>
-                  <CardDelete onClick={() => deleteHandler(post._id)}>
-                    Borrar
-                  </CardDelete>
                 </CardButtons>
                 <CardDateCreated>
                   Created - On {post.createdAt.substring(0, 10)}

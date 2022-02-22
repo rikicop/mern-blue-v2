@@ -34,7 +34,7 @@ const Navbar = ({ click, show }) => {
           <NavCartLink to="/cart">Servicios</NavCartLink>
         </NavLi>
         <NavLi>
-          <NavCartLink to="/blog">Blog</NavCartLink>
+          <NavCartLink to="/blogs">Blog</NavCartLink>
         </NavLi>
         <NavLi>
           <NavCartLink to="/myposts">My Posts</NavCartLink>

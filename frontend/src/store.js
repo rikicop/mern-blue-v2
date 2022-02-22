@@ -12,10 +12,13 @@ import {
   postListReducer,
   postUpdateReducer,
 } from "./reducers/postsReducers";
+
+import { blogsListReducer } from "./reducers/blogsReducers";
 const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   postList: postListReducer,
+  blogsList: blogsListReducer,
   postCreate: postCreateReducer,
   postUpdate: postUpdateReducer,
   postDelete: postDeleteReducer,

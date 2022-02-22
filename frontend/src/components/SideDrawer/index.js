@@ -22,7 +22,7 @@ const SideDrawer = ({ show, click }) => {
           <Link to="/cart">Servicios</Link>
         </SideLi>
         <SideLi>
-          <Link to="/cart">Blog</Link>
+          <Link to="/blogs">Blog</Link>
         </SideLi>
         <SideLi>
           <Link to="/myposts">My Posts</Link>
