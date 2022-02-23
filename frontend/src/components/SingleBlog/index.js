@@ -15,6 +15,7 @@ function SingleBlog() {
       const { data } = await axios.get(`/api/blogs/${id}`);
     };
     fetching();
+    console.log(first);
   }, []);
 
   return (
