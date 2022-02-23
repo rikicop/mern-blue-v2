@@ -69,7 +69,7 @@ const Cards = () => {
                   <CardDescription>{post.content}</CardDescription>
                 </CardBody>
                 <CardButtons>
-                  <Link to={`/blog/${post._id}`}>
+                  <Link to={`/blogs/${post._id}`}>
                     <CardEdit>Ver</CardEdit>
                   </Link>
                 </CardButtons>
