@@ -18,9 +18,9 @@ const SideDrawer = ({ show, click }) => {
         <SideLi>
           <Link to="/">Principal</Link>
         </SideLi>
-        <SideLi>
+        {/*  <SideLi>
           <Link to="/cart">Servicios</Link>
-        </SideLi>
+        </SideLi> */}
         <SideLi>
           <Link to="/blogs">Blog</Link>
         </SideLi>

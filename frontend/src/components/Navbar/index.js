@@ -30,9 +30,9 @@ const Navbar = ({ click, show }) => {
         <NavLi>
           <NavCartLink to="/">Principal</NavCartLink>
         </NavLi>
-        <NavLi>
+        {/*<NavLi>
           <NavCartLink to="/cart">Servicios</NavCartLink>
-        </NavLi>
+        </NavLi> */}
         <NavLi>
           <NavCartLink to="/blogs">Blog</NavCartLink>
         </NavLi>

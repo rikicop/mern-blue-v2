@@ -1,7 +1,7 @@
 import React from "react";
 import SingleBlog from "../components/SingleBlog";
 
-export const SinglePostScreen = () => {
+export const SingleBlogScreen = () => {
   return (
     <>
       <SingleBlog />
