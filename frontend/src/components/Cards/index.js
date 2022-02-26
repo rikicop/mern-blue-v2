@@ -106,7 +106,9 @@ const Cards = () => {
                 <CardBody>
                   <CardImg src={post.pic} />
                   <CardTitle>{post.title}</CardTitle>
-                  <CardDescription>{post.content}</CardDescription>
+                  <CardDescription>
+                    {post.content.substring(0, 30)}
+                  </CardDescription>
                 </CardBody>
                 <CardButtons>
                   <Link to={`/post/${post._id}`}>

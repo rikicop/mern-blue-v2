@@ -9,6 +9,7 @@ import {
   FormInput,
   FormButton,
   Text,
+  FormArea,
 } from "./SinglePElements";
 import { deletePostAction, updatePostAction } from "../../actions/postsActions";
 import { useDispatch, useSelector } from "react-redux";
@@ -125,7 +126,7 @@ function SinglePost() {
                 required
               />
               <FormLabel htmlForm="for"> Content </FormLabel>
-              <FormInput
+              <FormArea
                 type="text"
                 value={content}
                 placeholder="Introduce Contenido"
@@ -135,7 +136,7 @@ function SinglePost() {
               {content && (
                 <>
                   <FormLabel htmlForm="for">Post Preview</FormLabel>
-                  <ReactMarkdown>{content}</ReactMarkdown>
+                  <ReactMarkdown>{content.substring(0, 30)}</ReactMarkdown>
                 </>
               )}
               <FormLabel htmlForm="for"> Category </FormLabel>

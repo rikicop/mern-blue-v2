@@ -69,6 +69,7 @@ export const CardImg = styled.img`
 
 export const CardTitle = styled.h1`
   padding: 1rem;
+  font-size: 15px;
 `;
 
 export const CardDescription = styled.p`

@@ -2,6 +2,18 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const generateToken = require("../utils/generateToken");
 
+/* const getBlogs = asyncHandler(async (req, res) => {
+  const posts = await Post.find({});
+  res.json(posts);
+});
+ */
+
+const getUsers = asyncHandler(async (req, res) => {
+  const users = await User.find({});
+  //const user = await User.findOne({ email });
+  res.json(users);
+});
+
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password, pic } = req.body;
 
@@ -79,4 +91,4 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     throw new Error("User Not Found");
   }
 });
-module.exports = { registerUser, authUser, updateUserProfile };
+module.exports = { registerUser, authUser, updateUserProfile, getUsers };

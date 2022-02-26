@@ -10,6 +10,7 @@ export const Container = styled.div`
     "titulo"
     "sidebar"
     "imgcontainer"
+    "autor"
     "main"
     "footer";
   grid-gap: 0.2rem;
@@ -73,6 +74,15 @@ export const Titulo = styled.div`
   font-size: 2.2rem;
   /* background: #adc32b; */
   grid-area: titulo;
+  border-radius: 5px;
+  padding-top: 5px;
+`;
+
+export const Autor = styled.div`
+  text-align: center;
+  font-size: 2.2rem;
+  /* background: #adc32b; */
+  grid-area: autor;
   border-radius: 5px;
   padding-top: 5px;
 `;

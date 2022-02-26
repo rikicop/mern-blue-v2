@@ -84,6 +84,13 @@ export const FormLabel = styled.label`
   color: #fff;
 `;
 
+export const FormArea = styled.textarea`
+  padding: 10px 10px;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 4px;
+`;
+
 export const FormInput = styled.input`
   padding: 10px 10px;
   margin-bottom: 25px;
