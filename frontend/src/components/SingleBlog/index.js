@@ -22,8 +22,9 @@ import axios from "axios";
 
 function SingleBlog() {
   //const [blog, setBlog] = useState([]);
-  const [autor, setAutor] = useState({ auth: null });
+  const [autor, setAutor] = useState({ auth: [] });
   const [blog, setBlog] = useState({});
+  const [authName, setAuthName] = useState([]);
 
   let { id } = useParams();
   const navigate = useNavigate();
@@ -33,11 +34,17 @@ function SingleBlog() {
       const { data } = await axios.get(`/api/blogs/${id}`);
 
       const respAuth = await axios(`/api/users/all`);
-      setAutor({ auth: respAuth.data });
+      const autores = Object.values(respAuth.data);
+      console.log("Autores 1: ", autores);
+      let filtrado = autores.filter((item) => item._id === data.user);
+      let authorName = filtrado.map((a) => a.name);
+      setAuthName(authorName);
+      setAutor({ auth: filtrado });
       setBlog(data);
+      console.log("Esto es data user :", data.user);
     };
     fetching();
-  }, [id, setAutor, setBlog]);
+  }, [id, setAutor, setBlog, setAuthName]);
 
   console.log("single blog title: ", blog.title);
   console.log("Autores: ", autor);
@@ -57,7 +64,7 @@ function SingleBlog() {
         </Navbar>
         <Titulo>{blog.title}</Titulo>
         <Sidebar>
-          {blog.fecha} <br /> {/* {blog.author} */}
+          {authName} {blog.fecha} <br />
         </Sidebar>
         <ImgContainer>
           <Imagen src={blog.pic} alt="" />
