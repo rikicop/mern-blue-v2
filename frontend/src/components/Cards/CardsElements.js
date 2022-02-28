@@ -49,6 +49,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: calc(100vh / 2);
   cursor: pointer;
   transition: transform 200ms ease-in;
   &:hover {

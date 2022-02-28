@@ -63,19 +63,19 @@ function SingleBlog() {
           </RightNavTitle>
         </Navbar>
         <Titulo>{blog.title}</Titulo>
-        <Sidebar>
-          {authName} {blog.fecha} <br />
-        </Sidebar>
         <ImgContainer>
           <Imagen src={blog.pic} alt="" />
         </ImgContainer>
+        <Sidebar>
+          <h4>Por</h4> {authName}
+          <br />
+        </Sidebar>
         <Autor>{blog.title}</Autor>
         <Content dangerouslySetInnerHTML={{ __html: `${blog.content}` }} />
         <Footer>
           <SocialMediaWrap>
             <SocialIcons>
               <b>{blog.author}</b>
-
               <SocialIconLink
                 href={blog.lnk_face}
                 target="_blank"

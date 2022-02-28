@@ -49,7 +49,8 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
+  height: calc(100vh / 1.2);
+  //cursor: pointer;
   transition: transform 200ms ease-in;
   &:hover {
     transform: scale(1.02);
@@ -93,17 +94,18 @@ export const CardCreate = styled.button`
   transition: background 200ms ease-in, color 200ms ease-in;
 `;
 
-export const CardEdit = styled.button`
+export const CardVer = styled.button`
   padding: 1rem;
   font-family: inherit;
   font-weight: bold;
   font-size: 1rem;
-  margin: 1rem;
+  margin: 0rem;
   border: 2px solid blue;
   background: transparent;
   color: blue;
   border-radius: 10px;
   transition: background 200ms ease-in, color 200ms ease-in;
+  cursor: pointer;
 `;
 
 export const CardDelete = styled.button`
@@ -120,11 +122,13 @@ export const CardDelete = styled.button`
 `;
 
 export const CardDateCreated = styled.p`
-  padding: 0.2rem;
+  padding-left: 0.2rem;
+  font-size: 0.7rem;
   color: white;
 `;
 
 export const CardCategory = styled.p`
   padding: 0.2rem;
+  font-size: 0.9rem;
   color: white;
 `;

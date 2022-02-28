@@ -8,8 +8,8 @@ export const Container = styled.div`
   grid-template-areas:
     "nav"
     "titulo"
-    "sidebar"
     "imgcontainer"
+    "sidebar"
     "autor"
     "main"
     "footer";
@@ -96,6 +96,9 @@ export const Content = styled.div`
 `;
 
 export const Sidebar = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 100px;
   text-align: left;
   /* background: #5763a8; */
   grid-area: sidebar;

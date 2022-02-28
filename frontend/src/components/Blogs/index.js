@@ -13,7 +13,7 @@ import {
   CardContainer,
   CardDateCreated,
   CardDescription,
-  CardEdit,
+  CardVer,
   CardImg,
   CardsContainer,
   CardsHeader,
@@ -67,12 +67,12 @@ const Cards = () => {
                   <CardImg src={post.pic} />
                   <CardTitle>{post.title}</CardTitle>
                   <CardDescription>
-                    {post.content.substring(0, 30)}...
+                    {post.content.substring(0, 90)}...
                   </CardDescription>
                 </CardBody>
                 <CardButtons>
                   <Link to={`/blogs/${post._id}`}>
-                    <CardEdit>Ver</CardEdit>
+                    <CardVer>Ver</CardVer>
                   </Link>
                 </CardButtons>
                 <CardDateCreated>
